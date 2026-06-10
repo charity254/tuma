@@ -1,0 +1,23 @@
+# Environment files
+backend/.env
+mobile/.env
+admin/.env
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Build output
+admin/build/
+mobile/.expo/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
