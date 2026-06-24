@@ -1,4 +1,4 @@
-const { pool} = require('pg')
+const { Pool } = require('pg')
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
@@ -11,9 +11,9 @@ const connectDB = async () => {
         console.log('Connected to database');
         client.release();
     } catch (err) {
-        console.error('Database conection failed:', err.message);
+        console.error('Database connection failed:', err.message);
         process.exit(1);
     }
 };
-const query = (text, params) => pol.query(text, params);
-module.exports = { connectDB, query, pool};
+const query = (text, params) => pool.query(text, params);
+module.exports = { connectDB, query, pool };
