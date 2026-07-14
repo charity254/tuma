@@ -1,0 +1,218 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Tuma - Delivery Confirmation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ebe2cb",
+                    "on-error-container": "#93000a",
+                    "primary": "#7d5700",
+                    "on-surface-variant": "#504534",
+                    "surface-container-low": "#f3f3f4",
+                    "on-background": "#1a1c1c",
+                    "inverse-surface": "#2f3131",
+                    "tertiary-container": "#bbb39e",
+                    "surface": "#f9f9f9",
+                    "primary-fixed": "#ffdeaa",
+                    "primary-container": "#e8a820",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-primary-fixed-variant": "#5f4100",
+                    "background": "#f9f9f9",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "outline-variant": "#d5c4ae",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#5d4000",
+                    "surface-container-high": "#e8e8e8",
+                    "on-tertiary-fixed": "#1f1b0e",
+                    "on-tertiary-fixed-variant": "#4c4636",
+                    "on-surface": "#1a1c1c",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-secondary-container": "#636262",
+                    "on-primary-fixed": "#271900",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container": "#eeeeee",
+                    "secondary": "#5f5e5e",
+                    "surface-variant": "#e2e2e2",
+                    "surface-bright": "#f9f9f9",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#7d5700",
+                    "tertiary-fixed-dim": "#cfc6b0",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-dim": "#dadada",
+                    "outline": "#827562",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#febb35",
+                    "secondary-container": "#e2dfde",
+                    "primary-fixed-dim": "#febb35",
+                    "on-tertiary-container": "#4b4535",
+                    "tertiary": "#645e4c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "container-margin": "20px",
+                    "gutter": "16px",
+                    "base": "4px",
+                    "md": "16px",
+                    "xs": "8px",
+                    "lg": "24px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-sm": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .countdown-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- Top App Bar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-container-margin h-16 bg-surface dark:bg-on-background border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<h1 class="text-headline-md font-headline-md font-extrabold text-primary dark:text-primary-fixed-dim">Tuma</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a young urban professional woman with a friendly expression. The lighting is soft and natural, emphasizing a clean, light-mode minimalist aesthetic. The background is a soft, out-of-focus modern office space with white walls and warm mustard yellow accents, consistent with a high-end service platform interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPGeFeLOm-UrlSD7fO2SrJ04HF2q-y2wpR82a93Ou0-jgOU-hMVfAPsA9Oz-INwiumc2bHCGpSUc-vduRG1-5wc8bInDQi78jCefZzhJVS5jtSlUOAHNu386nLdiMzWr0QoKSVTPMBzcBRehgpZJ7eOdQZ779fB5Ya_tiQ3vHISIOOnNrl5Vm6h-CHpkNujdDMpk2IvsKi_Ho7_su0jNAQ0UcC49LlVp1Ig_qQTRcr_M-wVfCiSv7q5TQuzZizdIKPYGVQP34Ce_-S">
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-32 px-container-margin flex flex-col items-center max-w-lg mx-auto text-center">
+<!-- Illustration Section -->
+<div class="relative w-full aspect-square mb-lg flex items-center justify-center bg-tertiary-fixed/20 rounded-full border border-outline-variant">
+<div class="absolute inset-0 opacity-10">
+<!-- Subtle background pattern -->
+<svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="40" id="grid" patternUnits="userSpaceOnUse" width="40">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="#7d5700" stroke-width="1"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<div class="relative z-10 w-64 h-64">
+<img class="w-full h-full object-contain" data-alt="A modern, high-fidelity 3D digital illustration of a delivered cardboard parcel package sitting neatly on a clean, white-painted wooden doorstep. The scene is bathed in bright morning sunlight, casting soft shadows. The package is tied with a subtle mustard yellow ribbon, echoing the brand colors. The visual style is clean minimalism, focusing on clarity and reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2kKunylLbrnQhOjyhuSYTKDztny1pilo27jiX4z2SlFLqp0aKL4jnoz1_PzMuHsOuQMTtigGrB_-kkJOyKVck-B1vO4GgiS5b3dK9uM3pjWZ08uuTHm4FXniJKI3pV4-MCe1CgH2mk0iNN9QQ9aOmT6HmYesV2dASytN7XWcYETSuc7OPMBckcmpFKkj_ovgw7GvPG_2FijvLpeDt2u_p2JDoc5xOio6jh0drifaI96k_of0D_X_FesFzmFPc_41QpUj3b9TdyjhV">
+</div>
+</div>
+<!-- Status Message -->
+<div class="space-y-sm mb-xl">
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Deliver Confirmation</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Your runner has marked this errand as delivered.</p>
+</div>
+<!-- Countdown Timer -->
+<div class="bg-surface-container-low border border-outline-variant p-lg w-full mb-xl flex flex-col items-center rounded-2xl">
+<span class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant mb-xs">Auto-Release In</span>
+<div class="text-[48px] font-extrabold tracking-tight text-primary leading-none countdown-pulse" id="timer">26:01</div>
+<div class="mt-md w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-3/4 transition-all duration-1000 ease-linear"></div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="w-full space-y-md">
+<button class="w-full py-md bg-primary-container text-on-primary-container font-headline-sm hover:brightness-95 active:scale-[0.98] transition-all flex items-center justify-center gap-xs rounded-2xl">
+<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                Confirm Delivery
+            </button>
+<button class="w-full py-sm text-error font-label-md hover:bg-error-container/20 transition-colors flex items-center justify-center gap-xs rounded-2xl">
+<span class="material-symbols-outlined" data-icon="report_problem">report_problem</span>
+                Raise a Dispute
+            </button>
+</div>
+<!-- Footer Disclaimer -->
+<footer class="mt-xl">
+<p class="text-label-sm font-label-sm text-on-surface-variant max-w-xs mx-auto italic">
+                Payment will be automatically released to the runner when the timer runs out.
+            </p>
+</footer>
+</main>
+<!-- Bottom Navigation Bar (Shared Component) - Suppressed as per Task Intent (Transactional) -->
+<!-- However, task mentions Tuma brand consistency, we ensure the UI matches the guidelines -->
+<script>
+        // Simple Countdown Logic
+        let timeLeft = 29 * 60 + 59;
+        const timerDisplay = document.getElementById('timer');
+        
+        const countdown = setInterval(() => {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            
+            timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                timerDisplay.textContent = "00:00";
+            } else {
+                timeLeft--;
+            }
+        }, 1000);
+
+        // Interaction for buttons
+        document.querySelector('.bg-primary-container').addEventListener('click', () => {
+            alert('Delivery confirmed! Thank you for using Tuma.');
+        });
+
+        document.querySelector('.text-error').addEventListener('click', () => {
+            const confirmDispute = confirm('Are you sure you want to raise a dispute for this errand? Our support team will review the delivery.');
+            if(confirmDispute) {
+                console.log('Dispute raised');
+            }
+        });
+    </script>
+
+
+</body></html>

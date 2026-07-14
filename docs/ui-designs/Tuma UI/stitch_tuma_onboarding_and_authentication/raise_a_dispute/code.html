@@ -1,0 +1,264 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Raise a Dispute | Tuma</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ebe2cb",
+                    "on-error-container": "#93000a",
+                    "primary": "#7d5700",
+                    "on-surface-variant": "#504534",
+                    "surface-container-low": "#f3f3f4",
+                    "on-background": "#1a1c1c",
+                    "inverse-surface": "#2f3131",
+                    "tertiary-container": "#bbb39e",
+                    "surface": "#f9f9f9",
+                    "primary-fixed": "#ffdeaa",
+                    "primary-container": "#e8a820",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-primary-fixed-variant": "#5f4100",
+                    "background": "#f9f9f9",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "outline-variant": "#d5c4ae",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#5d4000",
+                    "surface-container-high": "#e8e8e8",
+                    "on-tertiary-fixed": "#1f1b0e",
+                    "on-tertiary-fixed-variant": "#4c4636",
+                    "on-surface": "#1a1c1c",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-secondary-container": "#636262",
+                    "on-primary-fixed": "#271900",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container": "#eeeeee",
+                    "secondary": "#5f5e5e",
+                    "surface-variant": "#e2e2e2",
+                    "surface-bright": "#f9f9f9",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#7d5700",
+                    "tertiary-fixed-dim": "#cfc6b0",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-dim": "#dadada",
+                    "outline": "#827562",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#febb35",
+                    "secondary-container": "#e2dfde",
+                    "primary-fixed-dim": "#febb35",
+                    "on-tertiary-container": "#4b4535",
+                    "tertiary": "#645e4c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "container-margin": "20px",
+                    "gutter": "16px",
+                    "base": "4px",
+                    "md": "16px",
+                    "xs": "8px",
+                    "lg": "24px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-sm": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            background-color: #f9f9f9;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E5E7EB;
+            border-radius: 2px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background bg-background min-h-screen pb-xl">
+<!-- Top Navigation Anchor (Manual mapping of TopAppBar from JSON) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-container-margin h-16 bg-surface dark:bg-on-background border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary" data-icon="close">close</button>
+<h1 class="text-headline-md font-headline-md font-extrabold text-primary dark:text-primary-fixed-dim">Raise a Dispute</h1>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional studio headshot of a young woman with a friendly expression, set against a clean, minimalist off-white background. The lighting is soft and even, highlighting her clear skin and neutral professional attire. The image adheres to a high-end, light-mode UI aesthetic with subtle tonal layering and sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkM6PWcWeZw_zXDRoIwPn2B_IwQ-jyOCYCN9Sa6s_ad_MemxONnKtBI29KEDrNINJ02tAgs0i4z0HePLkT6K-LiXU7HF5Ha1pHa50Hidn6dIsrEwTjYuzD_sBi1EhNVp1zQZoq-JFTB89bKiSgFwX1z0MaPSQ01xvpi0Qx_JLEMMeC_GNu7tHL6-eKjtzWVOThnGFLnwqVZ4J2bV8i93wVtvyXnXXy6yYjRJPjG1vFb04fyPqrV_ipzYHmBgHGyaSysmIdobl36FW_">
+</div>
+</header>
+<main class="pt-24 px-container-margin max-w-2xl mx-auto">
+<!-- Trust Banner / Status Note -->
+<section class="mb-lg p-md bg-tertiary-fixed dark:bg-on-tertiary-fixed-variant flex items-start gap-md border border-outline-variant rounded-2xl">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="lock">lock</span>
+<div>
+<h3 class="font-label-md text-label-md text-on-tertiary-fixed">Payment Protection Active</h3>
+<p class="font-body-md text-body-md text-on-tertiary-fixed-variant">Payment will be frozen during review. Our trust and safety team will investigate this errand within 24 hours.</p>
+</div>
+</section>
+<!-- Main Form -->
+<form class="space-y-xl">
+<!-- Reason Selection -->
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" for="reason">Dispute Reason</label>
+<div class="relative">
+<select class="w-full h-12 px-md appearance-none bg-surface border-b border-outline focus:border-primary-container focus:ring-0 transition-all font-body-md text-on-surface" id="reason">
+<option disabled="" selected="" value="">Select a reason...</option>
+<option value="no_delivery">Runner did not deliver</option>
+<option value="wrong_item">Wrong item received</option>
+<option value="damaged">Items were damaged</option>
+<option value="overcharged">Overcharged for items/gas</option>
+<option value="unprofessional">Unprofessional behavior</option>
+<option value="other">Other</option>
+</select>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Description -->
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" for="description">Tell us what happened</label>
+<textarea class="w-full p-md bg-surface border border-outline-variant focus:border-primary-container focus:ring-0 font-body-md text-on-surface custom-scrollbar rounded-2xl" id="description" placeholder="Provide as much detail as possible about the errand and the issue encountered..." rows="5"></textarea>
+</div>
+<!-- Evidence Upload -->
+<div class="space-y-md">
+<div class="flex justify-between items-end">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Upload Evidence</label>
+<span class="text-label-sm text-secondary">Max 3 photos</span>
+</div>
+<div class="grid grid-cols-3 gap-md">
+<!-- Upload Placeholder 1 -->
+<label class="relative aspect-square border-2 border-dashed border-outline-variant flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container-low transition-colors group rounded-2xl">
+<input accept="image/*" class="hidden" type="file">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors" data-icon="add_a_photo">add_a_photo</span>
+<span class="text-label-sm text-secondary mt-xs">Add Photo</span>
+</label>
+<!-- Upload Placeholder 2 (Disabled style until 1 is filled) -->
+<div class="aspect-square bg-surface-container flex flex-col items-center justify-center opacity-50 rounded-2xl">
+<span class="material-symbols-outlined text-outline" data-icon="image">image</span>
+</div>
+<!-- Upload Placeholder 3 -->
+<div class="aspect-square bg-surface-container flex flex-col items-center justify-center opacity-50 rounded-2xl">
+<span class="material-symbols-outlined text-outline" data-icon="image">image</span>
+</div>
+</div>
+<p class="text-label-sm text-secondary italic">Clear photos of receipts, items, or delivery locations help us resolve disputes faster.</p>
+</div>
+<!-- Action Buttons -->
+<div class="pt-lg space-y-md">
+<button class="w-full h-14 bg-primary-container text-on-primary-container font-label-md text-label-md flex items-center justify-center gap-sm hover:brightness-95 active:scale-[0.98] transition-all rounded-2xl" type="submit">
+<span class="material-symbols-outlined" data-icon="send" style="font-variation-settings: 'FILL' 1;">send</span>
+                    Submit Dispute
+                </button>
+<a class="block w-full text-center py-sm text-secondary font-label-md text-label-md hover:text-on-surface transition-colors" href="#">
+                    Cancel
+                </a>
+</div>
+</form>
+<!-- Trust-building footer elements -->
+<section class="mt-xl pt-xl border-t border-outline-variant">
+<h4 class="font-label-md text-label-md text-on-surface mb-md">What happens next?</h4>
+<div class="space-y-lg">
+<div class="flex gap-md">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="text-label-sm text-on-secondary-container">1</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface-variant">The Runner is notified that a dispute has been raised and the payment is held in escrow.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="text-label-sm text-on-secondary-container">2</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface-variant">Tuma Support reviews your evidence and the errand's GPS tracking history.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="text-label-sm text-on-secondary-container">3</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface-variant">We issue a resolution, which may include a full refund, partial credit, or runner reassignment.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation suppressed for Task-Focused screen as per Shell Visibility Rule -->
+<script>
+        // Simple micro-interaction for the file input placeholders
+        document.querySelectorAll('input[type="file"]').forEach(input => {
+            input.addEventListener('change', function(e) {
+                if (this.files && this.files[0]) {
+                    const label = this.parentElement;
+                    const icon = label.querySelector('.material-symbols-outlined');
+                    const text = label.querySelector('.text-label-sm');
+                    
+                    icon.textContent = 'check_circle';
+                    icon.classList.remove('text-secondary');
+                    icon.classList.add('text-primary');
+                    text.textContent = 'Photo Added';
+                    label.classList.add('border-primary-container', 'bg-tertiary-fixed');
+                }
+            });
+        });
+
+        // Form submission prevention for demo
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Dispute submitted successfully. Our team will review it shortly.');
+        });
+    </script>
+
+
+</body></html>

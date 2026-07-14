@@ -1,0 +1,213 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Rate the Runner - Tuma</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ebe2cb",
+                    "on-error-container": "#93000a",
+                    "primary": "#7d5700",
+                    "on-surface-variant": "#504534",
+                    "surface-container-low": "#f3f3f4",
+                    "on-background": "#1a1c1c",
+                    "inverse-surface": "#2f3131",
+                    "tertiary-container": "#bbb39e",
+                    "surface": "#f9f9f9",
+                    "primary-fixed": "#ffdeaa",
+                    "primary-container": "#e8a820",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-primary-fixed-variant": "#5f4100",
+                    "background": "#f9f9f9",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "outline-variant": "#d5c4ae",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#5d4000",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container": "#eeeeee",
+                    "secondary": "#5f5e5e",
+                    "surface-variant": "#e2e2e2",
+                    "surface-bright": "#f9f9f9",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#7d5700",
+                    "tertiary-fixed-dim": "#cfc6b0",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-dim": "#dadada",
+                    "outline": "#827562",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#febb35",
+                    "secondary-container": "#e2dfde",
+                    "primary-fixed-dim": "#febb35",
+                    "on-tertiary-container": "#4b4535",
+                    "tertiary": "#645e4c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "container-margin": "20px",
+                    "gutter": "16px",
+                    "base": "4px",
+                    "md": "16px",
+                    "xs": "8px",
+                    "lg": "24px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-sm": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .star-active {
+            font-variation-settings: 'FILL' 1;
+            color: #e8a820;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e2e2e2;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-background min-h-screen flex flex-col items-center">
+<!-- Top Navigation Anchor (Simulated from JSON but for sub-page context) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-container-margin h-16 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 transition-colors duration-200">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h1 class="text-headline-sm font-headline-sm text-on-surface">Rate Runner</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional and friendly user profile headshot of a person in their late 20s, set against a clean, neutral indoor background with soft natural lighting. The style is minimalist and high-quality, echoing a clean urban lifestyle aesthetic with bright tones and soft contrasts, maintaining the white-label and mustard yellow color theme of the Tuma app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAl1jjURgpbNCQIb9G_33Bi1ohTFKI2v8Crik7N6W3qkr3W7eV-bwU_ENgTP79F5QW8zqROm3Qa182qQC6totGaXqJr6W1cZ3ggMMH9m0RZ43KP92kkBIPKA3Jy_jl2zx29cgDzvQtNFeUl6COOomqYkwi6tfGu4SY0rEcW_c7sNP9nxMjng_Rz925Gk4geTRusVgNWjrPmHpS3vUlbET9d7nF9wKRyqucdNKGrpgD3NMy5GTsoJ-6dGw1S2LEG7onUHk9PKFjklgS">
+</div>
+</header>
+<main class="mt-16 w-full max-w-md px-container-margin py-xl flex-grow flex flex-col items-center">
+<!-- Profile Section -->
+<section class="text-center mb-xl">
+<div class="relative inline-block mb-md">
+<div class="w-24 h-24 rounded-2xl border-4 border-surface-container-lowest overflow-hidden shadow-sm"><img class="w-full h-full object-cover" data-alt="A close-up portrait of John D., a friendly looking runner in his 30s wearing a clean branded polo shirt. He has a warm smile and is positioned against a soft-focus urban park background. The lighting is bright and airy, following a clean minimalism style with a primary palette of white and warm mustard accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkAnKdaBAxJtjBxry777bKV9M4DY5qp2X7K_l7Vdj9VvfEyWkX9JPH6VdgspTQXpiPOVVUNcwisYGvgoEV6jtdnzyNGhewXG5K78Oj5AlMGLLiTqvU7qk1aOrvEw6B7rcHGBrasQxyg6hSB0M_ozMi2KRSqEE1E4uSprrWDZo4Nj0UBxQ1Asz2fExi72W1PQc0WswmxEHefIWIuOh0zFFFxoniqsnPP4mEuDvfeOUJMyZh4gGyQEfKUtj8yo1Tjw8e76MMYQh63cWY"></div>
+<div class="absolute bottom-0 right-0 bg-primary-container text-on-primary-container p-1 rounded-full border-2 border-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<h2 class="text-headline-md font-headline-md text-on-surface">John D.</h2>
+<p class="text-label-md font-label-md text-secondary uppercase tracking-widest mt-base">Express Runner</p>
+</section>
+<!-- Rating Section -->
+<section class="w-full mb-xl flex flex-col items-center">
+<p class="text-body-lg font-body-lg text-on-surface-variant text-center mb-lg">How was your errand today?</p>
+<div class="flex gap-xs mb-xl" id="star-rating">
+<button class="star-btn transition-transform duration-150 active:scale-90" data-value="1" onclick="setRating(1)">
+<span class="material-symbols-outlined text-[48px] text-outline-variant hover:text-primary-container cursor-pointer">star</span>
+</button>
+<button class="star-btn transition-transform duration-150 active:scale-90" data-value="2" onclick="setRating(2)">
+<span class="material-symbols-outlined text-[48px] text-outline-variant hover:text-primary-container cursor-pointer">star</span>
+</button>
+<button class="star-btn transition-transform duration-150 active:scale-90" data-value="3" onclick="setRating(3)">
+<span class="material-symbols-outlined text-[48px] text-outline-variant hover:text-primary-container cursor-pointer">star</span>
+</button>
+<button class="star-btn transition-transform duration-150 active:scale-90" data-value="4" onclick="setRating(4)">
+<span class="material-symbols-outlined text-[48px] text-outline-variant hover:text-primary-container cursor-pointer">star</span>
+</button>
+<button class="star-btn transition-transform duration-150 active:scale-90" data-value="5" onclick="setRating(5)">
+<span class="material-symbols-outlined text-[48px] text-outline-variant hover:text-primary-container cursor-pointer">star</span>
+</button>
+</div>
+<!-- Comment Field -->
+<div class="w-full">
+<label class="text-label-sm font-label-sm text-secondary uppercase block mb-xs" for="comment">Share your experience</label>
+<textarea class="w-full bg-surface border-0 border-b border-outline-variant focus:ring-0 focus:border-primary-container transition-all duration-300 px-0 py-sm text-body-md font-body-md placeholder:text-outline resize-none custom-scrollbar rounded-2xl" id="comment" placeholder="Tell us what went well or how John can improve..." rows="4"></textarea>
+</div>
+</section>
+<!-- Quick Feedback Chips -->
+<div class="w-full mb-xl">
+<p class="text-label-sm font-label-sm text-secondary uppercase mb-sm">What stood out?</p>
+<div class="flex flex-wrap gap-xs">
+<button class="chip px-md py-xs bg-tertiary-fixed text-on-tertiary-fixed text-label-md font-label-md rounded-2xl border border-transparent hover:border-primary-container transition-all">On Time</button>
+<button class="chip px-md py-xs bg-tertiary-fixed text-on-tertiary-fixed text-label-md font-label-md rounded-2xl border border-transparent hover:border-primary-container transition-all">On Time</button>
+<button class="chip px-md py-xs bg-tertiary-fixed text-on-tertiary-fixed text-label-md font-label-md rounded-2xl border border-transparent hover:border-primary-container transition-all">On Time</button>
+<button class="chip px-md py-xs bg-tertiary-fixed text-on-tertiary-fixed text-label-md font-label-md rounded-2xl border border-transparent hover:border-primary-container transition-all">On Time</button>
+</div>
+</div>
+</main>
+<!-- Bottom Actions -->
+<footer class="w-full max-w-md px-container-margin pb-xl flex flex-col gap-sm">
+<button class="w-full bg-primary-container text-on-primary-container py-lg font-bold text-body-md rounded-2xl shadow-sm hover:brightness-95 active:scale-95 transition-all duration-200 uppercase tracking-widest">Submit Rating</button>
+<button class="w-full text-secondary py-sm text-label-md font-label-md hover:text-on-surface-variant transition-colors">
+            Skip
+        </button>
+</footer>
+<script>
+        function setRating(rating) {
+            const buttons = document.querySelectorAll('.star-btn');
+            buttons.forEach((btn, index) => {
+                const icon = btn.querySelector('.material-symbols-outlined');
+                if (index < rating) {
+                    icon.classList.add('star-active');
+                } else {
+                    icon.classList.remove('star-active');
+                }
+            });
+
+            // Gentle haptic/visual feedback animation
+            const selectedBtn = buttons[rating - 1];
+            selectedBtn.classList.add('scale-110');
+            setTimeout(() => selectedBtn.classList.remove('scale-110'), 150);
+        }
+
+        // Chip selection toggle
+        document.querySelectorAll('.chip').forEach(chip => {
+            chip.addEventListener('click', function() {
+                this.classList.toggle('bg-primary-container');
+                this.classList.toggle('text-on-primary-container');
+            });
+        });
+    </script>
+
+
+</body></html>

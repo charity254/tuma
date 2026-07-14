@@ -21,3 +21,7 @@ Thumbs.db
 
 # Logs
 *.log
+.env*
+.flaskenv*
+!.env.project
+!.env.vault

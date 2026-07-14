@@ -1,0 +1,309 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Tuma - Step 4: Price &amp; Transport</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ebe2cb",
+                    "on-error-container": "#93000a",
+                    "primary": "#7d5700",
+                    "on-surface-variant": "#504534",
+                    "surface-container-low": "#f3f3f4",
+                    "on-background": "#1a1c1c",
+                    "inverse-surface": "#2f3131",
+                    "tertiary-container": "#bbb39e",
+                    "surface": "#f9f9f9",
+                    "primary-fixed": "#ffdeaa",
+                    "primary-container": "#e8a820",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-primary-fixed-variant": "#5f4100",
+                    "background": "#f9f9f9",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "outline-variant": "#d5c4ae",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#5d4000",
+                    "surface-container-high": "#e8e8e8",
+                    "on-tertiary-fixed": "#1f1b0e",
+                    "on-tertiary-fixed-variant": "#4c4636",
+                    "on-surface": "#1a1c1c",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-secondary-container": "#636262",
+                    "on-primary-fixed": "#271900",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container": "#eeeeee",
+                    "secondary": "#5f5e5e",
+                    "surface-variant": "#e2e2e2",
+                    "surface-bright": "#f9f9f9",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#7d5700",
+                    "tertiary-fixed-dim": "#cfc6b0",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-dim": "#dadada",
+                    "outline": "#827562",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#febb35",
+                    "secondary-container": "#e2dfde",
+                    "primary-fixed-dim": "#febb35",
+                    "on-tertiary-container": "#4b4535",
+                    "tertiary": "#645e4c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "container-margin": "20px",
+                    "gutter": "16px",
+                    "base": "4px",
+                    "md": "16px",
+                    "xs": "8px",
+                    "lg": "24px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-sm": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            background-color: #f9f9f9;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .transport-card.selected {
+            border: 2px solid #e8a820;
+            background-color: #fdf3dc;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e8a820;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<!-- Top Navigation Header -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-container-margin h-16 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-sm">
+<button class="w-10 h-10 flex items-center justify-center rounded-2xl hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-on-surface">arrow_back</span></button>
+<div class="flex flex-col items-start">
+
+<h1 class="font-headline-sm text-headline-sm text-on-surface">Mode &amp; Price</h1><span class="font-label-sm text-label-sm text-on-surface font-bold">Step 4 of 5</span>
+</div>
+</div>
+
+</header>
+<main class="pt-20 pb-32 px-container-margin max-w-2xl mx-auto space-y-lg">
+<!-- Section: Route Summary -->
+<section class="animate-in fade-in slide-in-from-bottom-4 duration-500">
+<div class="p-md border border-outline-variant bg-surface-container-lowest space-y-sm rounded-2xl">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-secondary">ROUTE SUMMARY</span>
+<span class="font-label-sm text-label-sm px-xs py-1 bg-tertiary-fixed rounded-sm text-on-tertiary-fixed">4.2 KM</span>
+</div>
+<div class="relative pl-xs space-y-md">
+<!-- Vertical Line Connector -->
+<div class="absolute left-1.5 top-2 bottom-2 w-0.5 bg-outline-variant"></div>
+<div class="flex items-start gap-sm relative">
+<div class="w-3 h-3 rounded-full bg-primary mt-1.5 ring-4 ring-primary-fixed"></div>
+<div>
+<p class="font-label-sm text-label-sm text-secondary">Pickup</p>
+<p class="font-body-md text-body-md font-bold">The Hub, Karen</p>
+</div>
+</div>
+<div class="flex items-start gap-sm relative">
+<div class="w-3 h-3 rounded-full bg-on-surface-variant mt-1.5 ring-4 ring-surface-container-high"></div>
+<div>
+<p class="font-label-sm text-label-sm text-secondary">Dropoff</p>
+<p class="font-body-md text-body-md font-bold">Prestige Plaza, Ngong Rd</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Transport Selection -->
+<section class="space-y-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Select Transport</h2>
+<div class="grid grid-cols-1 gap-sm">
+<!-- Transport Option: On Foot -->
+<div class="transport-card group cursor-pointer p-md border border-outline-variant transition-all flex items-center justify-between rounded-2xl selected" id="transport-foot" onclick="selectTransport('foot', 100)">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">directions_walk</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm">On Foot</h3>
+<p class="font-body-md text-body-md text-secondary">Light errands &amp; nearby delivery</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-secondary">EST. PRICE</p>
+<p class="font-headline-sm text-headline-sm text-primary">Ksh 100</p>
+</div>
+</div>
+<!-- Transport Option: Bicycle -->
+<div class="transport-card group cursor-pointer p-md border border-outline-variant bg-surface-container-lowest transition-all flex items-center justify-between rounded-2xl" id="transport-bike" onclick="selectTransport('bike', 150)">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">pedal_bike</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm">Bicycle</h3>
+<p class="font-body-md text-body-md text-secondary">Fast, eco-friendly delivery</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-secondary">EST. PRICE</p>
+<p class="font-headline-sm text-headline-sm text-primary">Ksh 150</p>
+</div>
+</div>
+<!-- Transport Option: Motorbike -->
+<div class="transport-card group cursor-pointer p-md border border-outline-variant bg-surface-container-lowest transition-all flex items-center justify-between rounded-2xl" id="transport-motor" onclick="selectTransport('motor', 350)">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">motorcycle</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm">Motorbike</h3>
+<p class="font-body-md text-body-md text-secondary">Heavier loads &amp; long distance</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-secondary">EST. PRICE</p>
+<p class="font-headline-sm text-headline-sm text-primary">Ksh 350</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Price Adjustment -->
+<section class="pt-sm border-t border-outline-variant flex flex-col items-center justify-center space-y-md text-center">
+<h2 class="font-label-md text-label-md text-secondary uppercase tracking-widest">Adjust Offer Price</h2>
+<div class="flex items-center gap-lg">
+<button class="w-14 h-14 border-2 border-on-background bg-surface-container-lowest flex items-center justify-center active:scale-90 transition-transform rounded-2xl" onclick="adjustPrice(-50)">
+<span class="material-symbols-outlined text-3xl font-bold">remove</span>
+</button>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-secondary">KSH</span>
+<span class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background transition-all duration-200" id="price-display">100</span>
+</div>
+<button class="w-14 h-14 border-2 border-on-background bg-surface-container-lowest flex items-center justify-center active:scale-90 transition-transform rounded-2xl" onclick="adjustPrice(50)">
+<span class="material-symbols-outlined text-3xl font-bold">add</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-secondary max-w-sm">Increasing your offer can attract faster responses from errand runners in high-demand areas.</p>
+</section>
+</main>
+<!-- Bottom Action Bar -->
+<footer class="fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant p-container-margin flex gap-sm">
+<button class="flex-1 py-md bg-on-background text-surface font-label-md text-label-md active:scale-95 transition-transform rounded-2xl">
+            Save Draft
+        </button>
+<button class="flex-[2] py-md bg-primary-container text-on-primary-container font-label-md text-label-md font-extrabold active:scale-95 transition-transform flex items-center justify-center gap-xs rounded-2xl">
+            Proceed to Payment
+            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</footer>
+<script>
+        let currentPrice = 100;
+        let basePrice = 100;
+
+        function selectTransport(id, price) {
+            // Update UI selected state
+            document.querySelectorAll('.transport-card').forEach(card => {
+                card.classList.remove('selected', 'bg-tertiary-fixed');
+                card.classList.add('bg-surface-container-lowest');
+            });
+            
+            const selectedCard = document.getElementById(`transport-${id}`);
+            selectedCard.classList.add('selected');
+            selectedCard.classList.remove('bg-surface-container-lowest');
+
+            // Update Price Logic
+            basePrice = price;
+            currentPrice = price;
+            updatePriceDisplay();
+            
+            // Subtle feedback
+            selectedCard.classList.add('scale-102');
+            setTimeout(() => selectedCard.classList.remove('scale-102'), 200);
+        }
+
+        function adjustPrice(amount) {
+            const minPrice = basePrice;
+            if (currentPrice + amount >= minPrice) {
+                currentPrice += amount;
+                updatePriceDisplay();
+                
+                // Visual bounce
+                const display = document.getElementById('price-display');
+                display.classList.add('scale-110', 'text-primary');
+                setTimeout(() => {
+                    display.classList.remove('scale-110', 'text-primary');
+                }, 150);
+            }
+        }
+
+        function updatePriceDisplay() {
+            document.getElementById('price-display').innerText = currentPrice;
+        }
+
+        // Initialize state
+        window.addEventListener('load', () => {
+            selectTransport('foot', 100);
+        });
+    </script>
+
+
+
+
+
+
+</body></html>

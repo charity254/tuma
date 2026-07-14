@@ -1,0 +1,325 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Tuma - Role Selection</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-container": "#636262",
+                      "on-primary-container": "#5d4000",
+                      "error": "#ba1a1a",
+                      "primary-fixed-dim": "#febb35",
+                      "primary-fixed": "#ffdeaa",
+                      "surface-tint": "#7d5700",
+                      "surface-variant": "#e2e2e2",
+                      "surface": "#f9f9f9",
+                      "inverse-on-surface": "#f0f1f1",
+                      "on-primary-fixed": "#271900",
+                      "inverse-surface": "#2f3131",
+                      "on-tertiary-fixed-variant": "#4c4636",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed-variant": "#5f4100",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#dadada",
+                      "error-container": "#ffdad6",
+                      "tertiary-container": "#bbb39e",
+                      "surface-container-low": "#f3f3f4",
+                      "primary": "#7d5700",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed": "#ebe2cb",
+                      "surface-bright": "#f9f9f9",
+                      "outline": "#827562",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed-dim": "#cfc6b0",
+                      "on-tertiary-container": "#4b4535",
+                      "on-secondary-fixed-variant": "#474746",
+                      "background": "#f9f9f9",
+                      "tertiary": "#645e4c",
+                      "secondary": "#5f5e5e",
+                      "surface-container-high": "#e8e8e8",
+                      "on-tertiary-fixed": "#1f1b0e",
+                      "inverse-primary": "#febb35",
+                      "primary-container": "#e8a820",
+                      "on-surface-variant": "#504534",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "secondary-fixed": "#e5e2e1",
+                      "surface-container": "#eeeeee",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface": "#1a1c1c",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#e2dfde",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "outline-variant": "#d5c4ae",
+                      "on-background": "#1a1c1c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "xs": "8px",
+                      "xl": "32px",
+                      "container-margin": "20px",
+                      "sm": "12px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "gutter": "16px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-md": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom Checkmark Badge Animation */
+        @keyframes scaleIn {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .badge-enter {
+            animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface h-screen flex flex-col font-body-md overflow-hidden">
+<!-- Top App Bar (Modified for transactional flow) -->
+<header class="fixed top-0 w-full flex items-center px-container-margin h-16 z-50 bg-surface-container-lowest">
+<button aria-label="Go back" class="text-on-surface p-2 -ml-2 rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex-1 text-center font-headline-lg-mobile text-headline-lg-mobile font-black text-on-surface"><div class="flex items-center justify-center h-12"><div class="h-12 w-auto flex items-center justify-center"><div class="h-10 w-auto"><img src="https://lh3.googleusercontent.com/aida/AP1WRLv6MGFMf-xa4q5qQnJVD57YeFwJvNUWIGbopLtJW2wViUj93URdsmHk68DNomeCn9PVphUVz0vsZLyg1NfCLhkZGYyusL6d5MAGzrnFtTYrUAjNm4gG5Z5BYh0g2enbyVx9M8Yk0IUjKNjxi7JB1fI9zlYldg0GAFZqYYidJ_3bhPnoRG_eZ9y7jWS9sJ1Y0nCQWDqsJvZNx8atovLqhxBat2cqxdAaCNf4vDiJqC854VGUNO4EZuphC_Cf" alt="Tuma Logo" class="h-full w-auto object-contain"></div></div></div></div>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto pt-24 pb-32 px-container-margin flex flex-col max-w-md mx-auto w-full">
+<!-- Header Section -->
+<div class="mb-xl text-center">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-xs">How will you use Tuma?</h1>
+<p class="font-body-md text-body-md text-secondary">Select your primary role to customize your experience.</p>
+</div>
+<!-- Role Selection Cards -->
+<div class="flex flex-col gap-md">
+<!-- Customer Card (Selected State) -->
+<button class="relative w-full text-left bg-[#FDF3DC] border-2 border-primary-container p-lg transition-all active:scale-[0.98] flex items-center gap-md group rounded-2xl" id="role-customer">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined fill text-on-surface" style="font-size: 28px;">shopping_bag</span>
+</div>
+<div class="flex-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-base">Customer</h2>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">I need errands run or tasks completed.</p>
+</div>
+<!-- Selected Badge -->
+<div class="absolute -top-3 -right-3 w-8 h-8 bg-on-surface rounded-full flex items-center justify-center badge-enter border-2 border-surface-container-lowest shadow-sm z-10" id="badge-customer">
+<span class="material-symbols-outlined text-surface-container-lowest" style="font-size: 18px; font-weight: 700;">check</span>
+</div>
+</button>
+<!-- Runner Card (Unselected State) -->
+<button class="relative w-full text-left bg-surface-container-lowest border border-surface-variant p-lg transition-all active:scale-[0.98] flex items-center gap-md group hover:border-outline-variant rounded-2xl" id="role-runner">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center shrink-0 group-hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-secondary" style="font-size: 28px;">pedal_bike</span>
+</div>
+<div class="flex-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-base">Runner</h2>
+<p class="font-body-md text-body-md text-secondary">I want to complete errands and earn money.</p>
+</div>
+<!-- Selected Badge (Hidden) -->
+<div class="absolute -top-3 -right-3 w-8 h-8 bg-on-surface rounded-full flex items-center justify-center hidden border-2 border-surface-container-lowest shadow-sm z-10" id="badge-runner">
+<span class="material-symbols-outlined text-surface-container-lowest" style="font-size: 18px; font-weight: 700;">check</span>
+</div>
+</button>
+</div>
+<!-- Disclaimer -->
+<div class="mt-auto pt-xl text-center mb-xl">
+<p class="font-label-sm text-label-sm text-secondary px-lg">
+                You can switch roles later inside your profile settings
+            </p>
+</div>
+</main>
+<!-- Fixed Bottom Action Area -->
+<div class="fixed bottom-0 w-full bg-surface-container-lowest border-t border-surface-variant p-container-margin pb-[calc(20px+env(safe-area-inset-bottom))] z-40 max-w-md left-1/2 -translate-x-1/2"><div class="flex items-center justify-center gap-xs mb-md">
+  <input type="checkbox" id="terms-checkbox" class="w-5 h-5 border-surface-variant text-primary-container focus:ring-primary-container rounded-2xl">
+  <label for="terms-checkbox" class="font-label-sm text-label-sm text-secondary">
+    I agree to the <a href="#" class="text-primary font-black hover:underline">Terms and Conditions</a> and <a href="#" class="text-primary font-black hover:underline">Privacy Policy</a>
+  </label>
+</div>
+<button class="w-full h-14 bg-primary-container text-on-surface font-label-md text-label-md flex items-center justify-center active:bg-inverse-primary transition-colors hover:opacity-90 rounded-2xl">
+            Continue
+        </button>
+</div>
+<script>
+        // Simple Interaction Logic for Role Selection
+        document.addEventListener('DOMContentLoaded', () => {
+            const customerBtn = document.getElementById('role-customer');
+            const runnerBtn = document.getElementById('role-runner');
+            const customerBadge = document.getElementById('badge-customer');
+            const runnerBadge = document.getElementById('badge-runner');
+
+            const selectRole = (selectedBtn, unselectedBtn, selectedBadge, unselectedBadge) => {
+                // Apply selected styles
+                selectedBtn.classList.remove('bg-surface-container-lowest', 'border-surface-variant', 'border', 'hover:border-outline-variant');
+                selectedBtn.classList.add('bg-[#FDF3DC]', 'border-2', 'border-primary-container');
+                
+                // Update icon styles for selected
+                const selIconContainer = selectedBtn.querySelector('.w-12');
+                selIconContainer.classList.remove('bg-surface-container-low', 'group-hover:bg-surface-variant');
+                selIconContainer.classList.add('bg-primary-container/20');
+                
+                const selIcon = selectedBtn.querySelector('.material-symbols-outlined:not([id^="badge"])');
+                selIcon.classList.remove('text-secondary');
+                selIcon.classList.add('fill', 'text-on-surface');
+
+                const selText = selectedBtn.querySelectorAll('p');
+                selText[0].classList.remove('text-secondary');
+                selText[0].classList.add('text-on-surface-variant', 'opacity-80');
+
+                // Apply unselected styles
+                unselectedBtn.classList.add('bg-surface-container-lowest', 'border-surface-variant', 'border', 'hover:border-outline-variant');
+                unselectedBtn.classList.remove('bg-[#FDF3DC]', 'border-2', 'border-primary-container');
+
+                // Update icon styles for unselected
+                const unselIconContainer = unselectedBtn.querySelector('.w-12');
+                unselIconContainer.classList.add('bg-surface-container-low', 'group-hover:bg-surface-variant');
+                unselIconContainer.classList.remove('bg-primary-container/20');
+
+                const unselIcon = unselectedBtn.querySelector('.material-symbols-outlined:not([id^="badge"])');
+                unselIcon.classList.add('text-secondary');
+                unselIcon.classList.remove('fill', 'text-on-surface');
+
+                const unselText = unselectedBtn.querySelectorAll('p');
+                unselText[0].classList.add('text-secondary');
+                unselText[0].classList.remove('text-on-surface-variant', 'opacity-80');
+
+                // Manage badges
+                selectedBadge.classList.remove('hidden');
+                selectedBadge.classList.add('badge-enter');
+                
+                unselectedBadge.classList.add('hidden');
+                unselectedBadge.classList.remove('badge-enter');
+            };
+
+            customerBtn.addEventListener('click', () => selectRole(customerBtn, runnerBtn, customerBadge, runnerBadge));
+            runnerBtn.addEventListener('click', () => selectRole(runnerBtn, customerBtn, runnerBadge, customerBadge));
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

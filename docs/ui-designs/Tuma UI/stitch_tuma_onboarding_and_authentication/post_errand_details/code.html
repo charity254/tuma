@@ -1,0 +1,240 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Tuma - Post Errand Step 3</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ebe2cb",
+                    "on-error-container": "#93000a",
+                    "primary": "#7d5700",
+                    "on-surface-variant": "#504534",
+                    "surface-container-low": "#f3f3f4",
+                    "on-background": "#1a1c1c",
+                    "inverse-surface": "#2f3131",
+                    "tertiary-container": "#bbb39e",
+                    "surface": "#f9f9f9",
+                    "primary-fixed": "#ffdeaa",
+                    "primary-container": "#e8a820",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-primary-fixed-variant": "#5f4100",
+                    "background": "#f9f9f9",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "outline-variant": "#d5c4ae",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#5d4000",
+                    "surface-container-high": "#e8e8e8",
+                    "on-tertiary-fixed": "#1f1b0e",
+                    "on-tertiary-fixed-variant": "#4c4636",
+                    "on-surface": "#1a1c1c",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-secondary-container": "#636262",
+                    "on-primary-fixed": "#271900",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container": "#eeeeee",
+                    "secondary": "#5f5e5e",
+                    "surface-variant": "#e2e2e2",
+                    "surface-bright": "#f9f9f9",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#7d5700",
+                    "tertiary-fixed-dim": "#cfc6b0",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-dim": "#dadada",
+                    "outline": "#827562",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#febb35",
+                    "secondary-container": "#e2dfde",
+                    "primary-fixed-dim": "#febb35",
+                    "on-tertiary-container": "#4b4535",
+                    "tertiary": "#645e4c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "container-margin": "20px",
+                    "gutter": "16px",
+                    "base": "4px",
+                    "md": "16px",
+                    "xs": "8px",
+                    "lg": "24px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-sm": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            background-color: #ffffff;
+            color: #1a1c1c;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for minimalist feel */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f9f9f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e2e2e2;
+            border-radius: 10px;
+        }
+        /* Input focus effects */
+        .form-input:focus, .form-textarea:focus, .form-select:focus {
+            outline: none;
+            border-bottom: 2px solid #e8a820 !important;
+            box-shadow: none !important;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface flex flex-col min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-container-margin h-16 bg-surface transition-colors duration-200 ease-in-out"><button class="mr-4 p-2 rounded-full hover:bg-surface-container transition-colors duration-200" onclick="history.back()"><span class="material-symbols-outlined text-on-surface">arrow_back</span></button><div class="flex flex-col flex-grow items-start"><span class="font-headline-sm text-headline-sm text-on-surface">Errand Details</span><span class="font-label-sm text-label-sm text-secondary">Step 3 of 5</span></div></header>
+<!-- Main Content Canvas -->
+<main class="px-container-margin max-w-2xl mx-auto w-full" style="padding-top: 80px; padding-bottom: 20px;">
+<!-- Step Indicator -->
+
+
+<!-- Form Section -->
+<form class="gap-md flex-col flex" id="errandDetailsForm">
+<!-- Description Field -->
+<div class="flex flex-col gap-base">
+<label class="font-label-sm text-on-surface-variant text-body-lg" for="description">Description</label>
+<textarea class="form-textarea w-full p-md bg-transparent border-b border-outline-variant focus:border-primary-container transition-all duration-200 text-body-md font-body-md resize-none rounded-2xl" id="description" name="description" placeholder="Describe what needs to be done (e.g., 'Pick up a medium-sized box from the reception desk...')" required="" rows="4"></textarea>
+</div>
+<!-- Parcel Type Field -->
+<div class="flex flex-col gap-base">
+<label class="font-label-sm text-on-surface-variant text-body-lg" for="parcelType">Parcel Type</label>
+<div class="relative">
+<select class="form-select w-full p-md bg-transparent border-b border-outline-variant focus:border-primary-container transition-all duration-200 text-body-md font-body-md appearance-none cursor-pointer rounded-2xl" id="parcelType" name="parcelType" required="">
+<option disabled="" selected="" value="">Select package type</option>
+<option value="document">Document</option>
+<option value="small_package">Small package</option>
+<option value="food">Food</option>
+<option value="clothing">Clothing</option>
+<option value="electronics">Electronics</option>
+<option value="medicine">Medicine</option>
+<option value="other">Other</option>
+</select>
+<div class="absolute right-md top-1/2 -translate-y-1/2 pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Special Instructions Field -->
+<div class="flex flex-col gap-base">
+<div class="flex justify-between items-center">
+<label class="text-body-lg font-label-sm text-on-surface-variant" for="specialInstructions">Special Instructions</label>
+<span class="text-label-sm font-label-sm text-outline">Optional</span>
+</div>
+<input class="form-input w-full p-md bg-transparent border-b border-outline-variant focus:border-primary-container transition-all duration-200 text-body-md font-body-md rounded-2xl" id="specialInstructions" name="specialInstructions" placeholder="e.g. 'Fragile', 'Ring the bell twice', 'Ask for Sarah'" type="text">
+</div>
+<!-- Visual Context Card (Asymmetric Layout/Bento Element) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="bg-tertiary-fixed p-lg flex flex-col justify-center border border-outline-variant/30 rounded-2xl">
+<span class="material-symbols-outlined text-primary text-[32px] mb-xs">verified_user</span>
+<h3 class="text-headline-sm font-headline-sm text-on-tertiary-fixed">Trusted Delivery</h3>
+<p class="text-label-sm font-label-sm text-on-tertiary-fixed-variant mt-xs">All our runners are vetted for reliability and security.</p>
+</div>
+<div class="relative overflow-hidden min-h-[160px] border border-outline-variant rounded-2xl">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist high-angle shot of a neatly wrapped brown paper package sitting on a white marble surface. Beside the package is a pair of modern eyeglasses and a small succulent in a ceramic pot, symbolizing organized logistics. The lighting is bright and airy with soft shadows, reflecting a professional and reliable urban delivery service aesthetic with warm golden tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwu8penGaig-LAZkpjldsk4xwgv-dc9RAmnNYW8pETT2ASO2EJXoUmlhYxB4Wd5URsxkuOTWcEj7omTQ7CpHsCijRvjBbpqEeFiHP4OImY_uhdH0SKNDAB8tyo5Y1_5hlBJIxUwtWQQfzWQSPBlMcfWxFb31kTwBKrebJiOluUofP_5VAkrfJdltDbC8PsYfu5_lpv3mAZN6rGg_b2WxKCU-U9w9-lBnwczrC5S_rDf7h9fiam1jksvws0KX1XI-RESMtgq5jl3ZX_">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-md">
+<span class="text-white text-label-sm font-label-sm">Secure Handling</span>
+</div>
+</div>
+</div>
+</form>
+</main>
+<!-- Bottom Action Bar -->
+<footer class="w-full z-50 bg-surface px-container-margin border-t border-outline-variant flex gap-md p-2"><button class="flex-[2] h-14 flex items-center justify-center bg-primary-container text-on-primary-container font-label-md hover:brightness-95 active:scale-95 transition-all duration-150 shadow-sm rounded-2xl" form="errandDetailsForm" type="submit">Continue</button></footer>
+<script>
+        // Micro-interaction for form validation/state
+        const form = document.getElementById('errandDetailsForm');
+        const continueBtn = form.querySelector('button[type="submit"]');
+
+        form.addEventListener('input', () => {
+            const isDescriptionFilled = document.getElementById('description').value.trim().length > 0;
+            const isTypeSelected = document.getElementById('parcelType').value !== "";
+            
+            if (isDescriptionFilled && isTypeSelected) {
+                continueBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                continueBtn.classList.add('bg-primary-container');
+            } else {
+                // continueBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            }
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Simulate navigation to step 4
+            console.log("Navigating to Step 4...");
+            // window.location.href = 'step4.html';
+        });
+
+        // Floating label effect or highlight on focus
+        const inputs = document.querySelectorAll('.form-input, .form-textarea, .form-select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.previousElementSibling.classList.add('text-primary');
+            });
+            input.addEventListener('blur', () => {
+                input.previousElementSibling.classList.remove('text-primary');
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+</body></html>

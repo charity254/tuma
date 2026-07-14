@@ -1,0 +1,234 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Tuma - Post Errand Step 1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ebe2cb",
+                    "on-error-container": "#93000a",
+                    "primary": "#7d5700",
+                    "on-surface-variant": "#504534",
+                    "surface-container-low": "#f3f3f4",
+                    "on-background": "#1a1c1c",
+                    "inverse-surface": "#2f3131",
+                    "tertiary-container": "#bbb39e",
+                    "surface": "#f9f9f9",
+                    "primary-fixed": "#ffdeaa",
+                    "primary-container": "#e8a820",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-primary-fixed-variant": "#5f4100",
+                    "background": "#f9f9f9",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "outline-variant": "#d5c4ae",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#5d4000",
+                    "surface-container-high": "#e8e8e8",
+                    "on-tertiary-fixed": "#1f1b0e",
+                    "on-tertiary-fixed-variant": "#4c4636",
+                    "on-surface": "#1a1c1c",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-secondary-container": "#636262",
+                    "on-primary-fixed": "#271900",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container": "#eeeeee",
+                    "secondary": "#5f5e5e",
+                    "surface-variant": "#e2e2e2",
+                    "surface-bright": "#f9f9f9",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#7d5700",
+                    "tertiary-fixed-dim": "#cfc6b0",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-dim": "#dadada",
+                    "outline": "#827562",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#febb35",
+                    "secondary-container": "#e2dfde",
+                    "primary-fixed-dim": "#febb35",
+                    "on-tertiary-container": "#4b4535",
+                    "tertiary": "#645e4c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "container-margin": "20px",
+                    "gutter": "16px",
+                    "base": "4px",
+                    "md": "16px",
+                    "xs": "8px",
+                    "lg": "24px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-sm": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            background-color: #f9f9f9;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pin-shadow {
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+        }
+        /* Pulse animation for the center pin dot */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.5); opacity: 0.3; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+        .animate-pulse-slow {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="overflow-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 flex items-center px-container-margin h-16 bg-surface border-b border-outline-variant"><button class="mr-4 p-2 rounded-full hover:bg-surface-container transition-colors duration-200"><span class="material-symbols-outlined text-on-surface">arrow_back</span></button><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface">Pickup Location</span><span class="font-label-sm text-label-sm text-secondary">Step 1 of 4</span></div></header>
+<!-- Main Content Canvas (Map) -->
+<main class="relative w-full h-screen overflow-hidden"><div class="absolute top-20 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] max-w-md z-50 mb-lg"><div class="flex justify-between items-end mb-1"><span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">STEP 1 OF 4</span><span class="text-label-sm font-label-sm text-primary">25% Complete</span></div><div class="h-1 bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-primary-container w-1/4 transition-all duration-500 ease-out"></div></div></div>
+<!-- Map Background -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500" data-alt="A highly detailed overhead satellite view of a modern urban street layout. The map features crisp, minimalist street grids in light grey and white tones, with soft green parks and subtle blue water bodies. The lighting is bright and clear, reflecting a professional light-mode UI aesthetic for an errand service app." data-location="London, United Kingdom">
+<!-- Fallback background image style for the container-query processing -->
+<div class="w-full h-full" data-alt="A clean, minimalist high-contrast digital map of a city neighborhood. The streets are rendered in soft whites and greys with subtle yellow highlights for main thoroughfares. The aesthetic is modern and clinical, emphasizing legibility and high scannability for a GPS-based logistics platform." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDKP5tseOY1p2WMgDMoyRIMODkPnLf0kbqNS4ztH6zGf12AvCEZ2c2S-U9flEPuxezq13ztRtgbSlMeqQYo7LlKpR6v6DpTNW5KPyvJ-v6qt7H_i3pW84Q9v6L8Nt3_NaTuJ8tr8usq07LmgkNbfzy-Gyk9s6aO_Eu0HTfa074rEOsVug9_IFfgmg8u5KboJbJdQXJ4Wtoou03ZdwcNM_yXvZg9C16qsCPWVlj6u05szIoFqs4qCnBUYXfMKQpirknzBg6MGiOyOUR3&quot;);"></div>
+</div>
+</div>
+<!-- Static Central Pin -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+<div class="relative flex flex-col items-center -translate-y-8" style="transform: translateY(-32px) scale(1); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+<!-- Pin Body -->
+<div class="pin-shadow">
+<span class="material-symbols-outlined text-primary text-[48px]" style="font-variation-settings: &quot;FILL&quot; 1;">location_on</span>
+</div>
+<!-- Pin Base Target -->
+<div class="w-2 h-2 bg-on-background rounded-full absolute -bottom-1"></div>
+<div class="w-6 h-6 border-2 border-primary rounded-full absolute -bottom-3 animate-pulse-slow"></div>
+</div>
+</div>
+<!-- UI Overlay: Search & Controls -->
+<div class="absolute bottom-0 w-full z-20 p-container-margin flex flex-col gap-sm">
+<!-- Address Search Container -->
+<div class="bg-surface p-md rounded-xl shadow-xl border border-outline-variant flex flex-col gap-sm">
+<!-- Search Input Field -->
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[20px]">search</span>
+<input class="w-full pl-10 pr-md py-sm bg-surface-container border-b border-outline-variant focus:border-primary-container focus:ring-0 text-body-md font-body-md text-on-surface placeholder:text-on-surface-variant outline-none transition-all" placeholder="Enter pickup address" type="text">
+</div>
+<!-- Current Location Button -->
+<button class="flex items-center gap-xs text-primary hover:bg-tertiary-fixed/30 p-xs rounded-xl transition-colors w-fit">
+<span class="material-symbols-outlined text-[18px]">my_location</span>
+<span class="font-label-md text-label-md">Use my current location</span>
+</button>
+<!-- Address Preview (Optional context) -->
+<div class="mt-base px-xs">
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Confirmed Location</p>
+<p class="text-body-md font-body-md text-on-surface mt-1 truncate">Ngong Road, PDSL, 4th Floor, W1U 5JS</p>
+</div>
+</div>
+<!-- Main CTA -->
+<div class="flex flex-col gap-sm">
+<!-- Instructions Toast (Subtle) -->
+<div class="bg-on-background/80 backdrop-blur-sm text-white px-md py-xs rounded-full self-center">
+<p class="text-label-sm font-label-sm">Move the map to adjust the pin</p>
+</div>
+<!-- Primary Button (Disabled state as requested) -->
+<button class="w-full h-14 bg-secondary-container text-on-secondary-container font-headline-sm text-headline-sm flex items-center justify-center cursor-not-allowed opacity-70 transition-all duration-300 rounded-xl" disabled="" id="continue-btn">
+                    Continue
+                </button>
+</div>
+</div>
+<!-- Map Interaction Visualizer (Simulated Zoom buttons) -->
+<div class="absolute right-container-margin top-1/2 -translate-y-1/2 flex flex-col gap-sm z-20">
+<button class="w-12 h-12 bg-surface text-on-surface border border-outline-variant rounded-xl flex items-center justify-center shadow-lg hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="w-12 h-12 bg-surface text-on-surface border border-outline-variant rounded-xl flex items-center justify-center shadow-lg hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined">remove</span>
+</button>
+</div>
+</main>
+<script>
+        // Micro-interactions and state handling
+        const input = document.querySelector('input');
+        const continueBtn = document.getElementById('continue-btn');
+
+        input.addEventListener('input', (e) => {
+            if (e.target.value.length > 5) {
+                // Activate button state
+                continueBtn.disabled = false;
+                continueBtn.classList.remove('bg-secondary-container', 'text-on-secondary-container', 'cursor-not-allowed', 'opacity-70');
+                continueBtn.classList.add('bg-primary-container', 'text-on-primary-container', 'hover:bg-primary-fixed-dim', 'active:scale-95');
+            } else {
+                // Return to disabled
+                continueBtn.disabled = true;
+                continueBtn.classList.add('bg-secondary-container', 'text-on-secondary-container', 'cursor-not-allowed', 'opacity-70');
+                continueBtn.classList.remove('bg-primary-container', 'text-on-primary-container', 'hover:bg-primary-fixed-dim', 'active:scale-95');
+            }
+        });
+
+        // Add a simple "bounce" effect to the pin when the map would "move"
+        let timer;
+        window.addEventListener('mousedown', () => {
+            document.querySelector('.relative.flex.flex-col').style.transform = 'translateY(-40px) scale(1.1)';
+            document.querySelector('.relative.flex.flex-col').style.transition = 'transform 0.2s ease-out';
+        });
+        window.addEventListener('mouseup', () => {
+            document.querySelector('.relative.flex.flex-col').style.transform = 'translateY(-32px) scale(1)';
+            document.querySelector('.relative.flex.flex-col').style.transition = 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        });
+    </script>
+
+
+
+
+
+
+
+
+</body></html>

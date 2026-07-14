@@ -1,0 +1,185 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Runner ID Verification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#636262",
+                    "on-primary-container": "#5d4000",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#febb35",
+                    "primary-fixed": "#ffdeaa",
+                    "surface-tint": "#7d5700",
+                    "surface-variant": "#e2e2e2",
+                    "surface": "#f9f9f9",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-primary-fixed": "#271900",
+                    "inverse-surface": "#2f3131",
+                    "on-tertiary-fixed-variant": "#4c4636",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#5f4100",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#dadada",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#bbb39e",
+                    "surface-container-low": "#f3f3f4",
+                    "primary": "#7d5700",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ebe2cb",
+                    "surface-bright": "#f9f9f9",
+                    "outline": "#827562",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#cfc6b0",
+                    "on-tertiary-container": "#4b4535",
+                    "on-secondary-fixed-variant": "#474746",
+                    "background": "#f9f9f9",
+                    "tertiary": "#645e4c",
+                    "secondary": "#5f5e5e",
+                    "surface-container-high": "#e8e8e8",
+                    "on-tertiary-fixed": "#1f1b0e",
+                    "inverse-primary": "#febb35",
+                    "primary-container": "#e8a820",
+                    "on-surface-variant": "#504534",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-container": "#eeeeee",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#1a1c1c",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#e2dfde",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "outline-variant": "#d5c4ae",
+                    "on-background": "#1a1c1c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xs": "8px",
+                    "xl": "32px",
+                    "container-margin": "20px",
+                    "sm": "12px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "gutter": "16px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-sm": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #FFFFFF; /* Clean White background override */
+        }
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface antialiased min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<nav class="flex items-center justify-between px-container-margin h-16 w-full z-50 bg-surface-container-lowest">
+<button class="text-on-surface hover:opacity-80 transition-opacity duration-200 active:scale-95">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="h-10 w-auto flex items-center"><div class="h-10 w-10"><img src="https://lh3.googleusercontent.com/aida/AP1WRLv6MGFMf-xa4q5qQnJVD57YeFwJvNUWIGbopLtJW2wViUj93URdsmHk68DNomeCn9PVphUVz0vsZLyg1NfCLhkZGYyusL6d5MAGzrnFtTYrUAjNm4gG5Z5BYh0g2enbyVx9M8Yk0IUjKNjxi7JB1fI9zlYldg0GAFZqYYidJ_3bhPnoRG_eZ9y7jWS9sJ1Y0nCQWDqsJvZNx8atovLqhxBat2cqxdAaCNf4vDiJqC854VGUNO4EZuphC_Cf" alt="Tuma Logo" class="h-full w-full object-contain"></div></div>
+<div class="w-6"></div> <!-- Spacer for center alignment -->
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow px-container-margin pb-safe flex flex-col max-w-md mx-auto w-full">
+<!-- Header Section -->
+<header class="mb-md">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-base">Verify your identity</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">We need to confirm your identity to keep the platform safe.</p>
+</header>
+<!-- Form Section -->
+<form class="flex-grow flex flex-col gap-lg">
+<!-- National ID Input -->
+<div class="flex flex-col relative">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-base" for="id_number">National ID Number</label>
+<input class="bg-transparent border-0 border-b border-surface-variant focus:border-primary-container focus:ring-0 px-0 py-sm font-body-md text-body-md text-on-surface transition-colors duration-200 outline-none rounded-2xl" id="id_number" name="id_number" placeholder="Enter your ID number" type="text">
+</div>
+<!-- Document Uploads Grid -->
+<div class="grid grid-cols-2 gap-md">
+<!-- Front of ID -->
+<button class="group flex flex-col items-center justify-center border border-dashed border-surface-variant p-md aspect-square hover:bg-surface-container-low transition-colors duration-200 rounded-2xl" type="button">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-sm group-hover:scale-110 transition-transform duration-200">photo_camera</span>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Front of ID</span>
+</button>
+<!-- Back of ID -->
+<button class="group flex flex-col items-center justify-center border border-dashed border-surface-variant p-md aspect-square hover:bg-surface-container-low transition-colors duration-200 rounded-2xl" type="button">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-sm group-hover:scale-110 transition-transform duration-200">photo_camera</span>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Back of ID</span>
+</button>
+</div>
+<!-- Selfie Upload -->
+<div class="flex flex-col items-center justify-center pt-md">
+<button class="group flex flex-col items-center justify-center w-32 h-32 border border-dashed border-surface-variant hover:bg-surface-container-low transition-colors duration-200 relative overflow-hidden rounded-2xl" type="button">
+<div class="absolute inset-0 bg-surface-container-low opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+<span class="material-symbols-outlined text-primary-container text-3xl mb-base relative z-10">face</span>
+<span class="font-label-sm text-label-sm text-on-surface text-center px-sm relative z-10">Upload standard selfie</span>
+</button>
+</div>
+<!-- Notice -->
+<div class="bg-surface-container-low p-md flex items-start gap-sm rounded-2xl mt-md mb-xl">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">info</span>
+<p class="font-label-md text-label-md text-on-surface-variant">Verification takes up to 24 hours to process.</p>
+</div>
+</form>
+<!-- Fixed Bottom Action -->
+<div class="mt-base pb-md">
+<button class="w-full bg-primary-container text-on-primary-container font-label-md text-label-md py-sm px-md hover:opacity-90 active:scale-95 transition-all duration-200 flex justify-center items-center rounded-2xl mb-md" type="submit">
+                Submit for review
+            </button>
+</div>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

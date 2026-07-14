@@ -1,0 +1,274 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Errand Detail - Tuma</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ebe2cb",
+                    "on-error-container": "#93000a",
+                    "primary": "#7d5700",
+                    "on-surface-variant": "#504534",
+                    "surface-container-low": "#f3f3f4",
+                    "on-background": "#1a1c1c",
+                    "inverse-surface": "#2f3131",
+                    "tertiary-container": "#bbb39e",
+                    "surface": "#f9f9f9",
+                    "primary-fixed": "#ffdeaa",
+                    "primary-container": "#e8a820",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-primary-fixed-variant": "#5f4100",
+                    "background": "#f9f9f9",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "outline-variant": "#d5c4ae",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#5d4000",
+                    "surface-container-high": "#e8e8e8",
+                    "on-tertiary-fixed": "#1f1b0e",
+                    "on-tertiary-fixed-variant": "#4c4636",
+                    "on-surface": "#1a1c1c",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-secondary-container": "#636262",
+                    "on-primary-fixed": "#271900",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container": "#eeeeee",
+                    "secondary": "#5f5e5e",
+                    "surface-variant": "#e2e2e2",
+                    "surface-bright": "#f9f9f9",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#7d5700",
+                    "tertiary-fixed-dim": "#cfc6b0",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-dim": "#dadada",
+                    "outline": "#827562",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#febb35",
+                    "secondary-container": "#e2dfde",
+                    "primary-fixed-dim": "#febb35",
+                    "on-tertiary-container": "#4b4535",
+                    "tertiary": "#645e4c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "container-margin": "20px",
+                    "gutter": "16px",
+                    "base": "4px",
+                    "md": "16px",
+                    "xs": "8px",
+                    "lg": "24px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-sm": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .timeline-step::before { content: ""; position: absolute; left: 7px; top: 24px; bottom: -8px; width: 2px; background-color: #E5E7EB; }
+        .timeline-step:last-child::before { display: none; }
+        .timeline-step.active::before { background-color: #7d5700; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-container-margin h-16 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-md">
+<button class="p-base">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="text-headline-sm font-headline-sm text-primary">Errand #TM-8821</h1>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant">share</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-auto object-cover" data-alt="A professional headshot of a user for a clean minimalist UI profile, high-key lighting, soft neutral background, modern and trustworthy aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACDWRVw5_xWXGU8U-uC0IfM034qyk2cxICaS_i3OpNJxvUSHFfM0L0-BKcqq8rIAzHzjbeyDerCBvtllsIWt6MLmQ5-BnR51EHI7n9f7Lbxu8T5WJIhrms56ioEgLQz52FKp7GMncmvQga5W9ufFhXMrJpJVMsGI8Lvo8u3TariMP6EFVg0oCBECy69QRBG7ibB9ZM0LHe0QDwv8bDOYsUbDbgiAuCzElKpy9axFLeCyREm5tfoOY2lbHrG0sx2_3RjH4HWhpaQOb4">
+</div>
+</div>
+</header>
+<main class="pt-16 max-w-2xl mx-auto">
+<!-- Static Route Map -->
+<div class="relative w-full h-48 sm:h-64 overflow-hidden border-b border-outline-variant">
+<div class="w-full h-full bg-surface-container flex items-center justify-center" data-location="Nairobi">
+<img class="w-full h-full object-cover grayscale opacity-80" data-alt="A clean, minimalist vector map showing a delivery route with two points and a path in Nairobi. The map uses a light grey and white palette with a distinct mustard yellow line for the route and subtle markers. High-clarity, professional cartography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAICPraj-laVyObIRxru8JNN9zCch23aZ4nfpntrFQi9gz6V6QOIzieQl7VReVoflKCEHfEW7GEJ-8N84Mjqhe9ZpsZdvlbxT4AkzYUpXnKCJIGXISch_Dz5p_r02ee39j-OUo_GzBjw2hg4fEHCgqmVstQb3fyfjMyypJO0ZGWJ3n_Sd_aQK7JB-yu1nuYWAn3YoeHFLRQqmSTxrUjKyS6YSWlko-7wNpXVFQ45DNdLfXiv_Y_lMIYqX6hG3e6OFkMn9BY5ZSTLvMN">
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bg-primary-container text-on-primary-container px-md py-xs shadow-lg border-2 border-surface font-label-md flex items-center gap-xs rounded-2xl">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+                        Delivered
+                    </div>
+</div>
+</div>
+</div>
+<div class="px-container-margin py-lg space-y-xl">
+<!-- Status Timeline -->
+<section>
+<h2 class="text-label-md font-label-md uppercase tracking-wider text-on-surface-variant mb-md">Errand Status</h2>
+<div class="space-y-md">
+<!-- Step 1 -->
+<div class="timeline-step active relative flex gap-md">
+<div class="relative z-10 w-4 h-4 rounded-full bg-primary mt-1 border-2 border-surface shadow-sm"></div>
+<div class="flex flex-col">
+<span class="text-body-md font-bold text-on-surface">Posted</span>
+<span class="text-label-sm text-on-surface-variant">Oct 12, 10:30 AM</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="timeline-step active relative flex gap-md">
+<div class="relative z-10 w-4 h-4 rounded-full bg-primary mt-1 border-2 border-surface shadow-sm"></div>
+<div class="flex flex-col">
+<span class="text-body-md font-bold text-on-surface">Accepted</span>
+<span class="text-label-sm text-on-surface-variant">Oct 12, 10:45 AM by James K.</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="timeline-step active relative flex gap-md">
+<div class="relative z-10 w-4 h-4 rounded-full bg-primary mt-1 border-2 border-surface shadow-sm"></div>
+<div class="flex flex-col">
+<span class="text-body-md font-bold text-on-surface">Picked Up</span>
+<span class="text-label-sm text-on-surface-variant">Oct 12, 11:20 AM</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="timeline-step active relative flex gap-md">
+<div class="relative z-10 w-4 h-4 rounded-full bg-primary mt-1 border-2 border-surface shadow-sm"></div>
+<div class="flex flex-col">
+<span class="text-body-md font-bold text-on-surface">Delivered</span>
+<span class="text-label-sm text-on-surface-variant">Oct 12, 12:05 PM</span>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="timeline-step relative flex gap-md">
+<div class="relative z-10 w-4 h-4 rounded-full bg-surface-variant mt-1 border-2 border-surface shadow-sm"></div>
+<div class="flex flex-col">
+<span class="text-body-md font-bold text-on-surface-variant">Completed</span>
+<span class="text-label-sm text-on-surface-variant">Pending confirmation</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Errand Info Grid -->
+<section class="space-y-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Left Column: Details -->
+<div class="space-y-lg">
+<div>
+<h2 class="text-label-md font-label-md uppercase tracking-wider text-on-surface-variant mb-xs">Description</h2>
+<p class="text-body-md text-on-surface leading-relaxed">
+                                Pick up a medium-sized box from Westlands Mall, Ground Floor (Clearance Counter) and deliver to Lavington Office Suites, Building B, 4th Floor. Handle with care.
+                            </p>
+</div>
+<div class="flex flex-wrap gap-sm">
+<div class="bg-tertiary-fixed text-on-tertiary-fixed px-sm py-xs rounded-sm border border-outline-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+<span class="text-label-sm">Medium Parcel</span>
+</div>
+<div class="bg-tertiary-fixed text-on-tertiary-fixed px-sm py-xs rounded-sm border border-outline-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">electric_scooter</span>
+<span class="text-label-sm">Express Mode</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Stats Card -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md space-y-md rounded-2xl">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant text-label-md">Distance</span>
+<span class="text-on-surface font-bold text-body-md">6.4 km</span>
+</div>
+<div class="flex justify-between items-center border-t border-outline-variant pt-md">
+<span class="text-on-surface-variant text-label-md">Service Fee</span>
+<span class="text-on-surface font-bold text-body-md">KES 450.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant text-label-md">Tip</span>
+<span class="text-on-surface font-bold text-body-md">KES 50.00</span>
+</div>
+<div class="flex justify-between items-center border-t border-outline-variant pt-md">
+<span class="text-primary font-bold text-label-md">Total Amount</span>
+<span class="text-primary font-extrabold text-headline-sm">KES 500.00</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Runner Info -->
+<section class="bg-surface-container-low border border-outline-variant p-md flex items-center justify-between rounded-2xl">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full border-2 border-primary-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A friendly, smiling delivery runner wearing a professional branded uniform in a modern urban setting. Warm natural lighting, focus on a trustworthy expression, clean minimalist background with subtle city bokeh." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgqYnxsfrx6KSVNuoCaYVzDY8vNcuJAj9Hz5qnm7MtNb7I1fu6yVISy1nAsBYL_HzpeXY1PGVo17kobCN88w5DeymUKxPrnAGIS-n6r8UIbgqhnZYebnj9jPEnbfFA5ZmdU-AXNTPKb84DFDIs-pVlarobrJxp8e6m7pg2NglKWrE6oTcaSjJUygzOCpXRkprEpZDwVUHYYd7I-ADJ-VVyvrETXCL7lQ6PGDTuE4Va9Q2M0Qh5utI9nEeI1Vz_TcYeylgndoU6zM2A">
+</div>
+<div>
+<h3 class="text-body-md font-bold text-on-surface">James Kuria</h3>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-sm font-bold">4.9</span>
+<span class="text-label-sm">• 1,240 runs</span>
+</div>
+</div>
+</div>
+<div class="flex gap-sm">
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant bg-surface hover:bg-surface-container-high transition-colors rounded-2xl">
+<span class="material-symbols-outlined text-on-surface-variant">chat_bubble</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant bg-surface hover:bg-surface-container-high transition-colors rounded-2xl">
+<span class="material-symbols-outlined text-on-surface-variant">call</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Fixed Bottom Action -->
+<div class="fixed bottom-0 left-0 w-full bg-surface border-t border-outline-variant p-container-margin z-50">
+<div class="max-w-2xl mx-auto">
+<button class="w-full h-14 bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary transition-all duration-200 font-bold text-label-md uppercase tracking-widest flex items-center justify-center gap-sm rounded-2xl">
+<span class="material-symbols-outlined">refresh</span>
+                Rebook this Errand
+            </button>
+</div>
+</div>
+<!-- Bottom Nav Bar (Hidden for Task-Focused Page) -->
+<!-- Suppressed to prioritize content canvas as per UX guidelines -->
+
+
+</body></html>

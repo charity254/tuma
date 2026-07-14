@@ -1,0 +1,360 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ebe2cb",
+                    "on-error-container": "#93000a",
+                    "primary": "#7d5700",
+                    "on-surface-variant": "#504534",
+                    "surface-container-low": "#f3f3f4",
+                    "on-background": "#1a1c1c",
+                    "inverse-surface": "#2f3131",
+                    "tertiary-container": "#bbb39e",
+                    "surface": "#f9f9f9",
+                    "primary-fixed": "#ffdeaa",
+                    "primary-container": "#e8a820",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-primary-fixed-variant": "#5f4100",
+                    "background": "#f9f9f9",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "outline-variant": "#d5c4ae",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#5d4000",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container": "#eeeeee",
+                    "secondary": "#5f5e5e",
+                    "surface-variant": "#e2e2e2",
+                    "surface-bright": "#f9f9f9",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#7d5700",
+                    "tertiary-fixed-dim": "#cfc6b0",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-dim": "#dadada",
+                    "outline": "#827562",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#febb35",
+                    "secondary-container": "#e2dfde",
+                    "primary-fixed-dim": "#febb35",
+                    "on-tertiary-container": "#4b4535",
+                    "tertiary": "#645e4c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "container-margin": "20px",
+                    "gutter": "16px",
+                    "base": "4px",
+                    "md": "16px",
+                    "xs": "8px",
+                    "lg": "24px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-sm": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; background-color: #f9f9f9; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .toggle-switch { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .status-card { transition: all 0.4s ease; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-container-margin h-16 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<span class="text-headline-md font-headline-md font-extrabold text-primary">Tuma</span>
+</div>
+<div class="flex items-center gap-sm">
+<div class="text-right">
+<p class="text-label-sm font-label-sm text-on-surface-variant">Hello,</p>
+<p class="text-label-md font-label-md font-bold text-on-surface">Sam</p>
+</div>
+<img class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A professional close-up portrait of a friendly young African male runner for a delivery service. He is wearing a clean branded polo shirt. The background is a soft-focus urban setting with warm morning light, emphasizing a trustworthy and reliable professional appearance. The lighting is high-key and modern, consistent with a premium service app aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtFDAK_qRjAn4eEQA0UP7DEyTtu3jWKq5G6atpe8JkVTDFgClW4Jx2CiYrLCgQdGKiVVYi7cXF6TkVGH-mCNa_xmfmMRPtgRIJldGF17h9Tu7RRf8nmv7stagXeA3FEju2Ap0QrBbkSQO3wWZu0lWWKrYy8CJFppf8VpxGPfo7gv_L-eZ8HBCB8OshPjHuZLW340AFPHU-2m94m1rNZBLNbev0oGfGhtPFTJWZFFINsp58Mlm__JWMnSH37S90yjykGYlmN7hvCnSA">
+</div>
+</header>
+<main class="pt-20 pb-24 px-container-margin">
+<!-- Status Toggle Section -->
+<section class="mt-lg">
+<div class="status-card bg-surface-container-lowest border border-outline-variant p-lg rounded-2xl mb-lg" id="statusContainer">
+<div class="flex justify-between items-center mb-md">
+<div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface" id="statusTitle">You are Offline</h2>
+<p class="text-body-md font-body-md text-on-surface-variant" id="statusSubtitle">Go online to start receiving errands</p>
+</div>
+<button class="relative inline-flex h-10 w-20 shrink-0 cursor-pointer items-center rounded-full bg-secondary-container transition-colors duration-300 ease-in-out focus:outline-none" id="toggleTrack" onclick="toggleOnline()">
+<span class="toggle-switch inline-block h-8 w-8 translate-x-1 transform rounded-full bg-surface-container-lowest shadow-md" id="toggleThumb"></span>
+</button>
+</div>
+<!-- Offline State Content -->
+<div class="block" id="offlineView">
+<button class="w-full h-14 bg-primary-container text-on-primary-container font-bold text-body-lg flex items-center justify-center gap-sm rounded-2xl hover:brightness-95 active:scale-[0.98] transition-all" onclick="toggleOnline()">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+                        Go Online
+                    </button>
+</div>
+<!-- Online Stats (Hidden initially) -->
+<div class="hidden grid grid-cols-2 gap-md mt-sm animate-in fade-in duration-500" id="onlineStats">
+<div class="bg-tertiary-fixed p-sm rounded-2xl">
+<p class="text-label-sm font-label-sm text-on-tertiary-fixed-variant">Active Area</p>
+<p class="text-label-md font-label-md font-bold text-on-tertiary-fixed">Downtown Core</p>
+</div>
+<div class="bg-secondary-container p-sm rounded-2xl">
+<p class="text-label-sm font-label-sm text-on-secondary-fixed-variant">Est. Demand</p>
+<p class="text-label-md font-label-md font-bold text-on-secondary-fixed">High</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Errand List Section (Conditional) -->
+<section class="hidden opacity-0 transform translate-y-4 transition-all duration-500" id="errandsList">
+<div class="flex justify-between items-end mb-md">
+<h3 class="text-headline-sm font-headline-sm">Nearby Errands</h3>
+<span class="text-label-md font-label-md text-primary">6 Available</span>
+</div>
+<div class="flex flex-col gap-md">
+<!-- Errand Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md hover:border-primary-container transition-colors rounded-2xl">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="electric_bike">electric_bike</span>
+<span class="text-label-sm font-label-sm bg-tertiary-fixed px-xs py-1 rounded-sm text-on-tertiary-fixed">Bike Delivery</span>
+</div>
+<span class="text-headline-sm font-bold text-on-surface">$12.50</span>
+</div>
+<div class="space-y-sm mb-md relative">
+<div class="absolute left-[7px] top-[14px] bottom-[14px] w-[2px] bg-outline-variant border-dotted border-l-2"></div>
+<div class="flex items-start gap-md pl-gutter">
+<div class="w-4 h-4 rounded-full border-2 border-primary bg-surface mt-1 shrink-0 z-10"></div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Pickup</p>
+<p class="text-body-md font-bold">Joe's Coffee, 4th Ave</p>
+</div>
+</div>
+<div class="flex items-start gap-md pl-gutter">
+<div class="w-4 h-4 rounded-full bg-primary mt-1 shrink-0 z-10"></div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Dropoff</p>
+<p class="text-body-md font-bold">128 Bluecrest Towers</p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-sm border-t border-outline-variant">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="route">route</span>
+<span class="text-label-md font-label-md">1.2 miles away</span>
+</div>
+<button class="px-lg py-sm bg-on-background text-surface font-bold text-label-md rounded-2xl">Accept</button>
+</div>
+</div>
+<!-- Errand Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md hover:border-primary-container transition-colors rounded-2xl">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="shopping_bag">shopping_bag</span>
+<span class="text-label-sm font-label-sm bg-tertiary-fixed px-xs py-1 rounded-sm text-on-tertiary-fixed">Grocery Run</span>
+</div>
+<span class="text-headline-sm font-bold text-on-surface">$28.00</span>
+</div>
+<div class="space-y-sm mb-md relative">
+<div class="absolute left-[7px] top-[14px] bottom-[14px] w-[2px] bg-outline-variant border-dotted border-l-2"></div>
+<div class="flex items-start gap-md pl-gutter">
+<div class="w-4 h-4 rounded-full border-2 border-primary bg-surface mt-1 shrink-0 z-10"></div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Pickup</p>
+<p class="text-body-md font-bold">Whole Foods Market</p>
+</div>
+</div>
+<div class="flex items-start gap-md pl-gutter">
+<div class="w-4 h-4 rounded-full bg-primary mt-1 shrink-0 z-10"></div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Dropoff</p>
+<p class="text-body-md font-bold">Private Residence, Hills St.</p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-sm border-t border-outline-variant">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="history">history</span>
+<span class="text-label-md font-label-md">Heavy items (15lb)</span>
+</div>
+<button class="px-lg py-sm bg-on-background text-surface font-bold text-label-md rounded-2xl">Accept</button>
+</div>
+</div>
+<!-- Errand Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md hover:border-primary-container transition-colors rounded-2xl">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="local_post_office">local_post_office</span>
+<span class="text-label-sm font-label-sm bg-tertiary-fixed px-xs py-1 rounded-sm text-on-tertiary-fixed">Post Office</span>
+</div>
+<span class="text-headline-sm font-bold text-on-surface">$8.75</span>
+</div>
+<div class="space-y-sm mb-md relative">
+<div class="absolute left-[7px] top-[14px] bottom-[14px] w-[2px] bg-outline-variant border-dotted border-l-2"></div>
+<div class="flex items-start gap-md pl-gutter">
+<div class="w-4 h-4 rounded-full border-2 border-primary bg-surface mt-1 shrink-0 z-10"></div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Pickup</p>
+<p class="text-body-md font-bold">City Post Central</p>
+</div>
+</div>
+<div class="flex items-start gap-md pl-gutter">
+<div class="w-4 h-4 rounded-full bg-primary mt-1 shrink-0 z-10"></div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Dropoff</p>
+<p class="text-body-md font-bold">Corporate Park, Wing B</p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-sm border-t border-outline-variant">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="route">route</span>
+<span class="text-label-md font-label-md">0.5 miles away</span>
+</div>
+<button class="px-lg py-sm bg-on-background text-surface font-bold text-label-md rounded-2xl">Accept</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Empty State Background Decoration (Visible when offline) -->
+<div class="mt-xl opacity-40" id="offlineGraphic">
+<div class="flex flex-col items-center justify-center p-xl gap-md text-center">
+<div class="w-32 h-32 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[64px] text-outline-variant" data-icon="notifications_off">notifications_off</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-[240px]">Nearby opportunities will appear here once you're online.</p>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-xs py-sm bg-surface border-t border-outline-variant">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-primary bg-tertiary-fixed rounded-xl px-4 py-1 scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<!-- My Errands -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="list_alt">list_alt</span>
+<span class="text-label-sm font-label-sm">Errands</span>
+</a>
+<!-- Earnings -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="text-label-sm font-label-sm">Earnings</span>
+</a>
+<!-- Chat -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150 relative" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="text-label-sm font-label-sm">Chat</span>
+<div class="absolute top-0 right-1 w-2 h-2 bg-error rounded-full"></div>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm">Account</span>
+</a>
+</nav>
+<script>
+        let isOnline = false;
+
+        function toggleOnline() {
+            isOnline = !isOnline;
+            const thumb = document.getElementById('toggleThumb');
+            const track = document.getElementById('toggleTrack');
+            const statusTitle = document.getElementById('statusTitle');
+            const statusSubtitle = document.getElementById('statusSubtitle');
+            const offlineView = document.getElementById('offlineView');
+            const onlineStats = document.getElementById('onlineStats');
+            const errandsList = document.getElementById('errandsList');
+            const offlineGraphic = document.getElementById('offlineGraphic');
+            const container = document.getElementById('statusContainer');
+
+            if (isOnline) {
+                // Change UI to Online
+                thumb.style.transform = 'translateX(40px)';
+                track.classList.remove('bg-secondary-container');
+                track.classList.add('bg-primary-container');
+                statusTitle.innerText = "You're Online";
+                statusSubtitle.innerText = "Looking for nearby errands...";
+                
+                offlineView.classList.add('hidden');
+                onlineStats.classList.remove('hidden');
+                offlineGraphic.classList.add('hidden');
+                
+                errandsList.classList.remove('hidden');
+                setTimeout(() => {
+                    errandsList.classList.remove('opacity-0', 'translate-y-4');
+                }, 50);
+
+                container.classList.add('border-primary-container', 'bg-tertiary-fixed/30');
+            } else {
+                // Change UI to Offline
+                thumb.style.transform = 'translateX(4px)';
+                track.classList.remove('bg-primary-container');
+                track.classList.add('bg-secondary-container');
+                statusTitle.innerText = "You are Offline";
+                statusSubtitle.innerText = "Go online to start receiving errands";
+                
+                offlineView.classList.remove('hidden');
+                onlineStats.classList.add('hidden');
+                offlineGraphic.classList.remove('hidden');
+                
+                errandsList.classList.add('opacity-0', 'translate-y-4');
+                setTimeout(() => {
+                    errandsList.classList.add('hidden');
+                }, 500);
+
+                container.classList.remove('border-primary-container', 'bg-tertiary-fixed/30');
+            }
+        }
+    </script>
+
+
+</body></html>

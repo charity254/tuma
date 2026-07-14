@@ -1,0 +1,254 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Tuma | Errand Live Tracking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .map-gradient-overlay {
+            background: linear-gradient(to bottom, rgba(249,249,249,0.9) 0%, rgba(249,249,249,0) 20%, rgba(249,249,249,0) 80%, rgba(249,249,249,1) 100%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ebe2cb",
+                        "on-error-container": "#93000a",
+                        "primary": "#7d5700",
+                        "on-surface-variant": "#504534",
+                        "surface-container-low": "#f3f3f4",
+                        "on-background": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "tertiary-container": "#bbb39e",
+                        "surface": "#f9f9f9",
+                        "primary-fixed": "#ffdeaa",
+                        "primary-container": "#e8a820",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-primary-fixed-variant": "#5f4100",
+                        "background": "#f9f9f9",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "outline-variant": "#d5c4ae",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#5d4000",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-fixed": "#1f1b0e",
+                        "on-tertiary-fixed-variant": "#4c4636",
+                        "on-surface": "#1a1c1c",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-secondary-container": "#636262",
+                        "on-primary-fixed": "#271900",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container": "#eeeeee",
+                        "secondary": "#5f5e5e",
+                        "surface-variant": "#e2e2e2",
+                        "surface-bright": "#f9f9f9",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#7d5700",
+                        "tertiary-fixed-dim": "#cfc6b0",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-dim": "#dadada",
+                        "outline": "#827562",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#febb35",
+                        "secondary-container": "#e2dfde",
+                        "primary-fixed-dim": "#febb35",
+                        "on-tertiary-container": "#4b4535",
+                        "tertiary": "#645e4c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "container-margin": "20px",
+                        "gutter": "16px",
+                        "base": "4px",
+                        "md": "16px",
+                        "xs": "8px",
+                        "lg": "24px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-sm": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col overflow-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-container-margin h-16 bg-surface border-b border-outline-variant transition-colors duration-200 ease-in-out">
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary hover:bg-surface-container transition-colors p-2 rounded-full" data-icon="arrow_back"></button>
+<h1 class="text-headline-md font-extrabold text-primary">Tuma</h1>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Status</span>
+<span class="text-headline-sm font-headline-sm text-primary">On the Way</span>
+</div>
+</header>
+<!-- Main Live Map Canvas -->
+<main class="relative flex-grow mt-16 pb-64">
+<!-- Map Background -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center grayscale-[0.2]" data-location="Nairobi, Kenya" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYlneCKUmU2OqNMlMQb6MeaXpbe4cyv2Ct-i_oykEO68MQZupnFPuiJMm0sxdcXQC_XZ35MaN2XqYH12CtdnFkqxDGMMlLljiPLhzaPiChC0ILuD4ETxk_6oD7A79EhSc3ak1GiF1c86rEawTbuhncDz7ViWgH_0bi2QFTy7gckng3GFteOvL3PjapdJLAdii7A2YeWHE0XokSHXYdRfR-4JSBmesEoR40x_cNwrYBhrKIa45dQ5vfwMUYItv6_FSJxizlkVD3h9I6')"></div>
+<!-- Map Overlay for scannability -->
+<div class="absolute inset-0 map-gradient-overlay pointer-events-none"></div>
+</div>
+<!-- Live Movement Simulation UI Elements -->
+<div class="relative z-10 w-full h-full p-container-margin pointer-events-none">
+<!-- Delivery Route Visualization (Simulated) -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-md">
+<!-- Start Point -->
+<div class="absolute top-20 left-10 flex flex-col items-center">
+<div class="w-4 h-4 bg-on-surface rounded-full border-2 border-white"></div>
+<div class="mt-2 bg-surface px-xs py-base border border-outline-variant text-label-sm font-label-sm shadow-sm rounded-lg">Store</div>
+</div>
+<!-- Runner Location -->
+<div class="absolute top-1/2 right-1/4 -translate-y-1/2 runner-pulse" style="transform: translate(-2.56766px, -4.29035px);">
+<div class="relative flex items-center justify-center">
+<div class="absolute w-12 h-12 bg-primary-container/30 rounded-full animate-ping"></div>
+<div class="relative w-10 h-10 bg-primary flex items-center justify-center rounded-full shadow-lg border-2 border-surface">
+<span class="material-symbols-outlined text-white text-[20px]" data-icon="moped"></span>
+</div>
+</div>
+</div>
+<!-- Destination Point -->
+<div class="absolute bottom-40 right-10 flex flex-col items-center">
+<div class="w-6 h-6 bg-primary-container flex items-center justify-center rounded-full border-2 border-white shadow-md">
+<span class="material-symbols-outlined text-[14px]" data-icon="home"></span>
+</div>
+<div class="mt-2 bg-surface px-xs py-base border border-outline-variant text-label-sm font-label-sm shadow-sm rounded-lg">Home (You)</div>
+</div>
+</div>
+<!-- ETA Floating Badge -->
+<div class="absolute top-lg left-container-margin bg-surface px-md py-sm border border-outline-variant shadow-sm flex items-center gap-xs rounded-2xl">
+<span class="material-symbols-outlined text-primary" data-icon="schedule"></span>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Estimated Arrival</p>
+<p class="text-headline-sm font-headline-sm text-on-surface">12 mins</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Info Card (The "Drawer") -->
+<section class="fixed bottom-0 left-0 w-full z-40 px-container-margin pb-container-margin">
+<div class="bg-surface border border-outline-variant shadow-lg max-w-2xl mx-auto overflow-hidden rounded-2xl">
+<!-- Progress Bar -->
+<div class="w-full h-1.5 bg-surface-container">
+<div class="h-full bg-primary-container w-2/3 transition-all duration-1000"></div>
+</div>
+<div class="p-md md:p-lg space-y-md">
+<!-- Runner Profile Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="w-14 h-14 rounded-full overflow-hidden border border-outline-variant bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a friendly courier named John D., wearing a clean mustard yellow branded uniform polo shirt. He is smiling warmly against a blurred urban background in broad daylight. The image has a clean, high-contrast aesthetic with sharp details and natural, warm lighting consistent with a modern service app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCseeSoK6sYZeP4XdEwr3m4i6xwJPUjgfG8Xl4qIR9YvrHF-XwWmBzOYY1W77Y3UDOmFq25ExChbr8Osd8qGtZ4We9O7dppm9r0o6KeudW9u3veUpmn_12eqXkcDUUQLcCutc3VDYg_MQzPEGPIYHs-vWU4Y0gvh7lJ53zTBltvsMHX67zOhSN3MJkp7pLVXSekMr7tvRAq0d8RP2YpYu_ZulFV3E3gVzcAbIbZmA3FonXkyzcgUu0PiXEjBkE66F-owREa7vuPF9HN">
+</div>
+<div>
+<div class="flex items-center gap-xs">
+<h2 class="text-headline-sm font-headline-sm text-on-surface">John D.</h2>
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="verified" style="font-variation-settings: 'FILL' 1;"></span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[16px] text-primary-container" data-icon="star" style="font-variation-settings: 'FILL' 1;"></span>
+<span class="text-label-md font-label-md ml-1">4.8</span>
+</div>
+<span class="text-outline">•</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="moped"></span>
+<span class="text-label-md font-label-md">Motorbike</span>
+</div>
+</div>
+</div>
+</div>
+<div class="hidden md:flex flex-col items-end">
+<p class="text-label-sm font-label-sm text-on-surface-variant">Order #TM-8821</p>
+<p class="text-label-md font-label-md text-primary font-bold">In Transit</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-md">
+<button class="flex items-center justify-center gap-xs bg-inverse-surface text-surface py-3 font-label-md hover:opacity-90 transition-all active:scale-95 rounded-2xl">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat"></span>
+                        Message Runner
+                    </button>
+<button class="flex items-center justify-center gap-xs bg-primary-container text-on-primary-container py-3 font-label-md hover:opacity-90 transition-all active:scale-95 rounded-2xl">
+<span class="material-symbols-outlined text-[20px]" data-icon="call"></span>
+                        Call Runner
+                    </button>
+</div>
+<!-- Cancel Option -->
+<div class="flex justify-center pt-xs">
+<button class="text-error text-label-sm font-label-sm hover:underline flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="close"></span>
+                        Cancel Errand
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Navigation Shell (Relevance check: Sub-page hide navigation but here we use it as the errand is a top-level feature) -->
+<!-- Note: Following the "Destination Rule", for focused tracking, the BottomNavBar is usually suppressed to prioritize the map and runner card -->
+<script>
+        // Micro-interactions for the "live" feeling
+        document.addEventListener('DOMContentLoaded', () => {
+            const runner = document.querySelector('.runner-pulse');
+            let angle = 0;
+
+            // Subtle "breathing" animation for runner movement
+            function animateRunner() {
+                if(runner) {
+                    const x = Math.sin(angle) * 5;
+                    const y = Math.cos(angle) * 5;
+                    runner.style.transform = `translate(${x}px, ${y}px)`;
+                    angle += 0.02;
+                }
+                requestAnimationFrame(animateRunner);
+            }
+            animateRunner();
+        });
+    </script>
+
+
+</body></html>

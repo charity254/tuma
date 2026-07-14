@@ -1,0 +1,253 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Tuma - Payment Confirmation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ebe2cb",
+                        "on-error-container": "#93000a",
+                        "primary": "#7d5700",
+                        "on-surface-variant": "#504534",
+                        "surface-container-low": "#f3f3f4",
+                        "on-background": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "tertiary-container": "#bbb39e",
+                        "surface": "#f9f9f9",
+                        "primary-fixed": "#ffdeaa",
+                        "primary-container": "#e8a820",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-primary-fixed-variant": "#5f4100",
+                        "background": "#f9f9f9",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "outline-variant": "#d5c4ae",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#5d4000",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-fixed": "#1f1b0e",
+                        "on-tertiary-fixed-variant": "#4c4636",
+                        "on-surface": "#1a1c1c",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-secondary-container": "#636262",
+                        "on-primary-fixed": "#271900",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container": "#eeeeee",
+                        "secondary": "#5f5e5e",
+                        "surface-variant": "#e2e2e2",
+                        "surface-bright": "#f9f9f9",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#7d5700",
+                        "tertiary-fixed-dim": "#cfc6b0",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-dim": "#dadada",
+                        "outline": "#827562",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#febb35",
+                        "secondary-container": "#e2dfde",
+                        "primary-fixed-dim": "#febb35",
+                        "on-tertiary-container": "#4b4535",
+                        "tertiary": "#645e4c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "container-margin": "20px",
+                        "gutter": "16px",
+                        "base": "4px",
+                        "md": "16px",
+                        "xs": "8px",
+                        "lg": "24px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-sm": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-transition { transition: all 0.3s ease-in-out; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 flex items-center px-container-margin h-16 bg-surface/90 backdrop-blur-md border-b border-outline-variant">
+<button class="mr-4 p-2 rounded-full hover:bg-surface-container transition-colors duration-200" onclick="history.back()">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<div class="flex-1 flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">Tuma</span>
+<span class="font-label-sm text-label-sm text-secondary">Step 5 of 5</span>
+</div>
+<div class="w-10 h-10 rounded-2xl overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="User Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCokBnVcUbXHzw7V-8jTTqAnmGQ0sTvQucMYu5-o24L_Wc5rscNYtzTkWc40q_lhwx8xfEVn0S1Hd6GcoBgJZU0ZJ-ES6n2N-eCWYecqMStdVtta_fzOTYIXpK5Ga6k3kLUK_3UH7NnJu0-zgIp2TaZZOzWelsWEh0roV1eRgSW7qQMTvNispeJl-RhGFUL6Yia-34B_bxCh760q8ADj8iLB5TH1WWXQPHO8yWYosoRuScDQFgB9dOhZE-GiyTg6ZPs3iBVz7GIuKAy">
+</div>
+</header>
+<main class="flex-grow pt-16 px-container-margin max-w-md mx-auto w-full pb-sm">
+<!-- Progress Bar Indicator -->
+
+<!-- Animated Confirmation Header -->
+<div class="text-center mb-lg pt-md">
+<div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-tertiary-fixed mb-md">
+<span class="material-symbols-outlined text-primary text-5xl" data-icon="verified_user" style="font-variation-settings: &quot;FILL&quot; 1;">verified_user</span>
+</div>
+<h2 class="text-headline-md font-headline-md mb-xs">Review &amp; Pay</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Your errand is almost ready to go.</p>
+</div>
+<!-- Order Summary Card -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-md mb-lg space-y-md shadow-sm">
+<div class="flex justify-between items-center pb-sm border-b border-outline-variant">
+<h3 class="text-label-sm font-label-sm text-secondary uppercase tracking-widest">Errand Summary</h3>
+<span class="text-label-sm font-label-sm px-sm py-[2px] bg-tertiary-fixed text-on-tertiary-fixed rounded-2xl">Express Delivery</span>
+</div>
+<!-- Locations -->
+<div class="relative pl-xs space-y-md">
+<!-- Vertical Line Connector -->
+<div class="absolute left-1.5 top-2 bottom-2 w-0.5 bg-outline-variant"></div>
+<div class="flex items-start gap-sm relative">
+<div class="w-6 h-6 flex items-center justify-center mt-1.5"><span class="material-symbols-outlined text-primary text-xl" data-icon="location_on">push_pin</span></div>
+<div>
+<p class="text-label-sm font-label-sm text-secondary">Pick-up</p>
+<p class="text-body-md font-body-md font-bold">Sarit Centre, Westlands</p>
+</div>
+</div>
+<div class="flex items-start gap-sm relative">
+<div class="w-6 h-6 flex items-center justify-center mt-1.5"><span class="material-symbols-outlined text-primary text-xl" data-icon="location_on">location_on</span></div>
+<div>
+<p class="text-label-sm font-label-sm text-secondary">Drop-off</p>
+<p class="text-body-md font-body-md font-bold">Kilimani, Ngong Road</p>
+</div>
+</div>
+</div>
+<!-- Details Grid -->
+<div class="grid grid-cols-2 gap-md pt-sm border-t border-outline-variant">
+<div>
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-wider mb-1">Mode</p>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="motorcycle">motorcycle</span>
+<span class="text-body-md font-body-md font-bold">Motorbike</span>
+</div>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-wider mb-1">Distance</p>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="route">route</span>
+<span class="text-body-md font-body-md font-bold">8.4 km</span>
+</div>
+</div>
+</div>
+<!-- Total -->
+<div class="flex justify-between items-center pt-md border-t border-outline-variant">
+<p class="text-headline-sm font-headline-sm">Total Amount</p>
+<p class="text-headline-md font-headline-md text-primary">Ksh 450.00</p>
+</div>
+</section>
+<!-- Trust Note -->
+<div class="flex gap-sm p-md bg-tertiary-fixed rounded-2xl mb-lg border border-outline-variant">
+<span class="material-symbols-outlined text-primary" data-icon="lock" style="font-variation-settings: &quot;FILL&quot; 1;">lock</span>
+<p class="text-label-md font-label-md text-on-tertiary-fixed-variant leading-tight">
+                Your payment is held securely until delivery is confirmed. Runners only receive payment once you are satisfied.
+            </p>
+</div>
+<!-- Pesapal Integration Section -->
+<section class="space-y-md mb-xl">
+<h3 class="text-label-sm font-label-sm text-secondary uppercase tracking-widest px-base">Payment Method</h3>
+<div class="border-2 border-primary-container rounded-2xl p-md bg-surface-container-lowest flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-surface flex items-center justify-center p-2 rounded-2xl">
+<img class="w-full object-contain" data-alt="Pesapal Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUGsWDIx5mwXww4NLgO7cFkTD7JatcfCQZ7i2lotDtigeDK1BbaT52Ioq5-8P1jnQK0B46Idn_gUv01c7BgZ2lUL0cJXxA7jfJsml0ZJohvAlgZh5FUKKmYdhXk3qf6dQCYKa4tVdsaP0Kbzh-f6I2tRJGqVHxqth8e19RWW-zIBuJVlZ-0O1ec8kKlHrvDFPpNNsSC0cmXkMLu8-olUlOwpEsXAMWEY9ucfRKlw_JHscnUc0lls2LyMI12EFEkXZUK70gz-Bx8LHq">
+</div>
+<div>
+<p class="text-body-md font-body-md font-bold">Pesapal Secure Checkout</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">M-Pesa, Visa, Mastercard</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: &quot;FILL&quot; 1;">radio_button_checked</span>
+</div>
+<p class="text-label-sm font-label-sm text-center text-on-surface-variant px-md">
+                You will be redirected to Pesapal's secure portal to complete your transaction.
+            </p><button id="pay-btn" class="w-full rounded-2xl flex items-center justify-center gap-sm mt-md transition-transform active:scale-95 bg-primary-container text-on-primary-container font-headline-sm h-20 p-xl"><span class="font-body-md">Pay <span class="font-bold text-2xl">Ksh 450.00</span></span><span class="material-symbols-outlined">arrow_forward</span></button>
+</section>
+</main>
+<!-- Fixed Bottom Action Bar -->
+<div class="fixed bottom-4 left-4 right-4 max-w-md mx-auto z-50">
+
+</div>
+<!-- Success Modal -->
+<div class="fixed inset-0 bg-on-background/40 backdrop-blur-sm z-[100] flex items-center justify-center hidden opacity-0 transition-opacity duration-300" id="success-overlay">
+<div class="bg-surface-container-lowest w-[90%] max-w-sm rounded-2xl p-xl text-center scale-95 transition-transform duration-300 shadow-2xl">
+<div class="mb-lg flex justify-center">
+<div class="w-20 h-20 rounded-full bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-5xl" style="font-variation-settings: &quot;FILL&quot; 1;">task_alt</span>
+</div>
+</div>
+<h3 class="text-headline-md font-headline-md mb-sm text-primary">Errand Posted!</h3>
+<p class="text-body-md font-body-md mb-xl text-on-surface-variant">We've notified nearby runners. You'll receive a notification as soon as someone picks up your errand.</p>
+<button class="w-full bg-on-background text-white h-12 font-label-md rounded-2xl" onclick="window.location.reload()">Track Errand Status</button>
+</div>
+</div>
+<script>
+        const payBtn = document.getElementById('pay-btn');
+        const overlay = document.getElementById('success-overlay');
+        const overlayContent = overlay.querySelector('div');
+
+        payBtn.addEventListener('click', () => {
+            payBtn.disabled = true;
+            payBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> <span>Processing...</span>';
+            
+            setTimeout(() => {
+                overlay.classList.remove('hidden');
+                setTimeout(() => {
+                    overlay.classList.add('opacity-100');
+                    overlayContent.classList.remove('scale-95');
+                    overlayContent.classList.add('scale-100');
+                }, 10);
+            }, 1500);
+        });
+    </script>
+
+
+
+
+
+
+</body></html>

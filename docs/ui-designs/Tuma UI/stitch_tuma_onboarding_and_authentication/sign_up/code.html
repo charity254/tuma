@@ -1,0 +1,244 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Sign Up | Tuma Errand Services</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#504534",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "error": "#ba1a1a",
+                        "on-background": "#1a1c1c",
+                        "tertiary-fixed-dim": "#cfc6b0",
+                        "primary-fixed-dim": "#febb35",
+                        "secondary-container": "#e2dfde",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#4b4535",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#4c4636",
+                        "surface-bright": "#f9f9f9",
+                        "inverse-primary": "#febb35",
+                        "tertiary-fixed": "#ebe2cb",
+                        "primary": "#7d5700",
+                        "tertiary-container": "#bbb39e",
+                        "on-primary": "#ffffff",
+                        "secondary": "#5f5e5e",
+                        "on-secondary-container": "#636262",
+                        "on-tertiary-fixed": "#1f1b0e",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-dim": "#dadada",
+                        "primary-container": "#e8a820",
+                        "inverse-surface": "#2f3131",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface-container-low": "#f3f3f4",
+                        "surface-container": "#eeeeee",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1a1c1c",
+                        "surface-variant": "#e2e2e2",
+                        "primary-fixed": "#ffdeaa",
+                        "on-primary-container": "#5d4000",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary-fixed": "#271900",
+                        "background": "#f9f9f9",
+                        "outline-variant": "#d5c4ae",
+                        "surface-tint": "#7d5700",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f9f9f9",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#5f4100",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#827562",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#645e4c",
+                        "inverse-on-surface": "#f0f1f1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "md": "16px",
+                        "base": "4px",
+                        "sm": "12px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "xs": "8px",
+                        "container-margin": "20px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-sm": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom bottom border transition for inputs */
+        .tuma-input {
+            border: none;
+            border-bottom: 1px solid #c8c6c5;
+            transition: border-color 0.2s ease-in-out, border-width 0.1s ease-in-out;
+            border-radius: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .tuma-input:focus {
+            box-shadow: none !important;
+            border-bottom: 2px solid #7d5700;
+            outline: none;
+        }
+        .tuma-input.active {
+            border-bottom: 2px solid #7d5700;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen bg-background">
+<div class="max-w-[480px] mx-auto min-h-screen flex flex-col bg-surface-container-lowest">
+<!-- Header / Logo -->
+<header class="fixed top-0 w-full flex items-center px-container-margin h-16 z-50 bg-surface-container-lowest">
+<button aria-label="Go back" class="text-on-surface p-2 -ml-2 rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex-1 text-center font-headline-lg-mobile text-headline-lg-mobile font-black text-on-surface">
+<div class="flex items-center justify-center h-12">
+<div class="h-12 w-auto flex items-center justify-center">
+<img src="https://lh3.googleusercontent.com/aida/AP1WRLv6MGFMf-xa4q5qQnJVD57YeFwJvNUWIGbopLtJW2wViUj93URdsmHk68DNomeCn9PVphUVz0vsZLyg1NfCLhkZGYyusL6d5MAGzrnFtTYrUAjNm4gG5Z5BYh0g2enbyVx9M8Yk0IUjKNjxi7JB1fI9zlYldg0GAFZqYYidJ_3bhPnoRG_eZ9y7jWS9sJ1Y0nCQWDqsJvZNx8atovLqhxBat2cqxdAaCNf4vDiJqC854VGUNO4EZuphC_Cf" alt="Tuma Logo" class="h-10 w-auto object-contain mx-auto">
+</div>
+</div>
+</div>
+<div class="w-10"></div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow px-container-margin pt-24">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg font-bold text-on-surface mb-lg text-center" style="font-size: 30px;">Create Account</h1>
+<form class="space-y-lg">
+<!-- Full Name -->
+<div class="relative">
+<label class="text-label-sm text-secondary block mb-base uppercase tracking-wider" for="name">Full Name</label>
+<input class="tuma-input w-full py-sm text-body-md bg-transparent placeholder:text-secondary-fixed-dim focus:placeholder:transparent" id="name" name="name" placeholder="Enter your legal name" type="text">
+</div>
+<!-- Phone Number -->
+<div class="relative">
+<label class="text-label-sm text-secondary block mb-base uppercase tracking-wider" for="phone">Phone Number</label>
+<div class="flex items-end">
+<div class="flex items-center gap-xs pr-sm border-b border-secondary-fixed-dim h-[45px] pb-sm">
+<span class="text-body-md font-semibold text-on-background">+254</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+<input class="tuma-input flex-grow py-sm text-body-md bg-transparent placeholder:text-secondary-fixed-dim focus:placeholder:transparent" id="phone" name="phone" placeholder="700 000 000" type="tel">
+</div>
+</div>
+<!-- Email Address (Focused State Simulation) -->
+<div class="relative">
+<label class="text-label-sm text-primary block mb-base uppercase tracking-wider" for="email">Email Address</label>
+<input class="tuma-input active w-full py-sm text-body-md bg-transparent border-primary border-b-2" id="email" name="email" type="email" value="alex.morani@design.com">
+</div>
+<!-- CTA Button -->
+<div class="pt-md">
+<button class="w-full bg-primary-container text-on-surface py-lg font-bold text-body-lg hover:opacity-90 transition-colors duration-200 rounded-xl" type="submit">Continue</button>
+</div>
+</form>
+<!-- Divider -->
+<div class="flex items-center my-xl">
+<div class="flex-grow h-px bg-surface-container-highest"></div>
+<span class="px-md text-label-md text-secondary font-medium">or</span>
+<div class="flex-grow h-px bg-surface-container-highest"></div>
+</div>
+<!-- Social Sign-In -->
+<button class="w-full border border-on-background text-on-background bg-surface-container-lowest py-md font-bold text-body-md flex items-center justify-center gap-md hover:bg-surface-container-low transition-all rounded-xl">
+<div class="w-5 h-5 flex items-center justify-center">
+<svg class="w-full h-full" viewBox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 12-4.53z" fill="#EA4335"></path>
+</svg>
+</div>
+                Continue with Google
+            </button>
+</main>
+<!-- Footer -->
+<footer class="p-xl text-center">
+<p class="text-body-md text-secondary">
+                Already have an account? 
+                <a class="text-primary font-bold hover:underline decoration-primary ml-base" href="#">Log in</a>
+</p>
+</footer>
+</div>
+<!-- Decorative Illustration Section (Optional Atmospheric Element) -->
+<div class="fixed bottom-0 right-0 p-lg pointer-events-none opacity-20">
+<div class="relative w-48 h-48">
+<animated-svg class="w-full h-full" src="{{DATA:ANIMATION:ANIMATION_1}}"></animated-svg>
+</div>
+</div>
+<script>
+        // Subtle interaction: adding "filled" class to inputs that have content
+        const inputs = document.querySelectorAll('.tuma-input');
+        inputs.forEach(input => {
+            input.addEventListener('blur', (e) => {
+                if (e.target.value.trim() !== "") {
+                    e.target.classList.add('border-on-background');
+                    e.target.classList.remove('border-secondary-fixed-dim');
+                } else {
+                    e.target.classList.remove('border-on-background');
+                    e.target.classList.add('border-secondary-fixed-dim');
+                }
+            });
+        });
+
+        // Simple mock for the focus state on the email field specifically for the brief
+        const emailField = document.getElementById('email');
+        if(emailField) {
+            emailField.addEventListener('focus', () => {
+                emailField.previousElementSibling.classList.add('text-primary');
+                emailField.previousElementSibling.classList.remove('text-secondary');
+            });
+            emailField.addEventListener('blur', () => {
+                // Keep mustard if it's the "focused" example, otherwise reset
+                if (emailField.id !== 'email') {
+                    emailField.previousElementSibling.classList.remove('text-primary');
+                    emailField.previousElementSibling.classList.add('text-secondary');
+                }
+            });
+        }
+    </script>
+
+
+
+
+
+
+
+
+</body></html>
