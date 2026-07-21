@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
+ "scripts": {
   "start": "node src/index.js",
-  "dev": "nodemon src/index.js",
-  "db:migrate": "node src/config/migrate.js",
-  "db:seed": "node src/config/seed.js"
+  "dev": "doppler run -- nodemon src/index.js",
+  "db:migrate": "doppler run -- node src/config/migrate.js",
+  "db:seed": "doppler run -- node src/config/seed.js"
 },
   "keywords": [],
   "author": "",
@@ -16,7 +16,6 @@
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
-    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "express-rate-limit": "^8.5.2",
     "express-validator": "^7.3.2",
