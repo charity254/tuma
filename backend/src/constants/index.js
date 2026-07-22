@@ -92,6 +92,8 @@ const ERROR_MESSAGES = {
   UNAUTHORIZED_ACTION: 'You are not authorized to perform this action',
   DATABASE_MIGRATION_FAILED: 'Database migration failed:',
   DATABASE_SEED_FAILED: 'Database seeding failed:',
+  EMAIL_ALREADY_EXISTS: 'Email address is already registered',
+  ACCOUNT_ALREADY_VERIFIED: 'Account is already verified',
 };
 
 // Success messages
