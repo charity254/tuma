@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS disputes CASCADE;
+
+CREATE TABLE disputes (
+  errand_id UUID PRIMARY KEY REFERENCES errands(id) ON DELETE CASCADE,
+  raised_by UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  reason TEXT NOT NULL,
+  evidence_urls TEXT[] NOT NULL DEFAULT '{}',
+  status VARCHAR(20) NOT NULL DEFAULT 'open',
+  resolution TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  resolved_at TIMESTAMP WITH TIME ZONE
+);
