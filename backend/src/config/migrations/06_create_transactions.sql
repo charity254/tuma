@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS transactions CASCADE;
+
+CREATE TABLE transactions (
+  errand_id UUID PRIMARY KEY REFERENCES errands(id) ON DELETE CASCADE,
+  pesapal_reference VARCHAR(100) UNIQUE NOT NULL,
+  payment_status VARCHAR(20) NOT NULL DEFAULT 'pending',
+  escrow_held_at TIMESTAMP WITH TIME ZONE,
+  released_at TIMESTAMP WITH TIME ZONE,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
