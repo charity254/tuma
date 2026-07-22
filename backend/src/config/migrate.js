@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { pool } = require('./db');
+const { ERROR_MESSAGES } = require('../constants');
 
 const migrate = async () => {
   const client = await pool.connect();
@@ -34,7 +35,7 @@ const migrate = async () => {
     process.exit(0);
   } catch (error) {
     await client.query('ROLLBACK');
-    console.error('Database migration failed:', error);
+    console.error(ERROR_MESSAGES.DATABASE_MIGRATION_FAILED, error);
     process.exit(1);
   } finally {
     client.release();

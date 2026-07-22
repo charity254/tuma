@@ -90,6 +90,8 @@ const ERROR_MESSAGES = {
   RUNNER_NOT_VERIFIED: 'Your runner profile is pending verification',
   ERRAND_NOT_FOUND: 'Errand not found',
   UNAUTHORIZED_ACTION: 'You are not authorized to perform this action',
+  DATABASE_MIGRATION_FAILED: 'Database migration failed:',
+  DATABASE_SEED_FAILED: 'Database seeding failed:',
 };
 
 // Success messages

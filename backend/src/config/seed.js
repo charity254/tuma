@@ -1,6 +1,6 @@
 const { pool } = require('./db');
 const bcrypt = require('bcryptjs');
-const { ROLES, MODES, AUTH_PROVIDERS, TRANSPORT_MODES } = require('../constants');
+const { ROLES, MODES, AUTH_PROVIDERS, TRANSPORT_MODES, ERROR_MESSAGES } = require('../constants');
 
 const seed = async () => {
   const client = await pool.connect();
@@ -78,7 +78,7 @@ const seed = async () => {
     process.exit(0);
   } catch (error) {
     await client.query('ROLLBACK');
-    console.error('Seeding failed:', error);
+    console.error(ERROR_MESSAGES.DATABASE_SEED_FAILED, error);
     process.exit(1);
   } finally {
     client.release();
