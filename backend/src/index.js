@@ -18,16 +18,6 @@ const supportRoutes = require('./routes/support.routes');
 const zoneRoutes = require('./routes/zone.routes');
 
 
-app.use('/api/auth', authRoutes);
-app.use('/api/users', userRoutes);
-app.use('/api/errands', errandRoutes);
-app.use('/api/runners', runnerRoutes);
-app.use('/api/payments', paymentRoutes);
-app.use('/api/admin', adminRoutes);
-app.use('/api/notifications', notificationRoutes);
-app.use('/api/support', supportRoutes);
-app.use('/api/zones', zoneRoutes);
-
 app.use(helmet());
 app.use(cors({
     origin: [
@@ -36,6 +26,10 @@ app.use(cors({
     ],
     credentials: true
 }));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
+app.use(passport.initialize());
 
 const limiter = rateLimit({
     windowMs : 15 * 60 * 1000, 
@@ -49,12 +43,18 @@ const authLimiter = rateLimit ({
     message: 'Too many login attempts, please try again later.',
 });
 
-app.use('api/', limiter);
-app.use('api/', authLimiter);
+app.use('/api/', limiter);
+app.use('/api/auth', authLimiter);
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true}));
-app.use(passport.initialize());
+app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/errands', errandRoutes);
+app.use('/api/runners', runnerRoutes);
+app.use('/api/payments', paymentRoutes);
+app.use('/api/admin', adminRoutes);
+app.use('/api/notifications', notificationRoutes);
+app.use('/api/support', supportRoutes);
+app.use('/api/zones', zoneRoutes);
 
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });

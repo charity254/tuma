@@ -7,4 +7,4 @@ const generateOTP = () =>
 const getOTPExpiry = () =>
   new Date(Date.now() + OTP_EXPIRY_MINUTES * 60 * 1000);
 
-module.exports = { generateOTP, getOTPExpiry };done
+module.exports = { generateOTP, getOTPExpiry };
