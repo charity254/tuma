@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 const userModel = require('../models/user.model');
 const emailService = require('../services/email.service');
 const AppError = require('../utils/AppError');
+const jwtUtils = require('../utils/jwt.utils');
 const { generateOTP, getOTPExpiry } = require('../utils/otp.utils');
 const { asyncHandler } = require('../middleware/error.middleware');
 const { 
@@ -118,8 +119,95 @@ const resendOTP = asyncHandler(async (req, res, next) => {
   });
 });
 
+const login = asyncHandler(async (req, res, next) => {
+  const { email, password } = req.body;
+
+  const user = await userModel.findByEmail(email);
+  if (!user) {
+    return next(new AppError(ERROR_MESSAGES.INVALID_CREDENTIALS, HTTP_STATUS.UNAUTHORIZED));
+  }
+
+  const isMatch = await bcrypt.compare(password, user.password_hash);
+  if (!isMatch) {
+    return next(new AppError(ERROR_MESSAGES.INVALID_CREDENTIALS, HTTP_STATUS.UNAUTHORIZED));
+  }
+
+  if (!user.is_verified) {
+    return next(new AppError(ERROR_MESSAGES.ACCOUNT_NOT_VERIFIED, HTTP_STATUS.FORBIDDEN));
+  }
+
+  const accessToken = jwtUtils.generateAccessToken(user.id);
+  const refreshToken = jwtUtils.generateRefreshToken(user.id);
+
+  const cookieOptions = {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'strict',
+    maxAge: 7 * 24 * 60 * 60 * 1000,
+  };
+
+  res.cookie('refreshToken', refreshToken, cookieOptions);
+
+  res.status(HTTP_STATUS.OK).json({
+    success: true,
+    message: SUCCESS_MESSAGES.LOGIN_SUCCESS,
+    data: {
+      accessToken,
+      user: {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+        activeMode: user.active_mode,
+      },
+    },
+  });
+});
+
+const refreshToken = asyncHandler(async (req, res, next) => {
+  const token = req.cookies.refreshToken;
+  if (!token) {
+    return next(new AppError(ERROR_MESSAGES.TOKEN_REQUIRED, HTTP_STATUS.UNAUTHORIZED));
+  }
+
+  try {
+    const decoded = jwtUtils.verifyRefreshToken(token);
+    const user = await userModel.findById(decoded.id);
+    if (!user) {
+      return next(new AppError(ERROR_MESSAGES.UNAUTHORIZED_ACTION, HTTP_STATUS.UNAUTHORIZED));
+    }
+
+    const accessToken = jwtUtils.generateAccessToken(user.id);
+
+    res.status(HTTP_STATUS.OK).json({
+      success: true,
+      data: {
+        accessToken,
+      },
+    });
+  } catch (err) {
+    return next(new AppError(ERROR_MESSAGES.TOKEN_INVALID, HTTP_STATUS.UNAUTHORIZED));
+  }
+});
+
+const logout = asyncHandler(async (req, res, next) => {
+  res.clearCookie('refreshToken', {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'strict',
+  });
+
+  res.status(HTTP_STATUS.OK).json({
+    success: true,
+    message: SUCCESS_MESSAGES.LOGOUT_SUCCESS,
+  });
+});
+
 module.exports = {
   register,
   verifyOTP,
   resendOTP,
+  login,
+  refreshToken,
+  logout,
 };

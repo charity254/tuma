@@ -64,8 +64,20 @@ const validateResendOTP = [
   validateResults
 ];
 
+const validateLogin = [
+  body('email')
+    .trim()
+    .isEmail()
+    .withMessage(ERROR_MESSAGES.EMAIL_INVALID),
+  body('password')
+    .notEmpty()
+    .withMessage(ERROR_MESSAGES.PASSWORD_REQUIRED),
+  validateResults
+];
+
 module.exports = {
   validateRegister,
   validateVerifyOTP,
   validateResendOTP,
+  validateLogin,
 };

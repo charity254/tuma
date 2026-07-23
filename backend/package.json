@@ -3,18 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
- "scripts": {
-  "start": "node src/index.js",
-  "dev": "doppler run -- nodemon src/index.js",
-  "db:migrate": "doppler run -- node src/config/migrate.js",
-  "db:seed": "doppler run -- node src/config/seed.js"
-},
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "doppler run -- nodemon src/index.js",
+    "db:migrate": "doppler run -- node src/config/migrate.js",
+    "db:seed": "doppler run -- node src/config/seed.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "express-rate-limit": "^8.5.2",
