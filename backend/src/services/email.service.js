@@ -1,15 +1,9 @@
 const { Resend } = require('resend');
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-/**
- * Sends a 6-digit registration OTP verification email using the Resend SDK.
- * Defaults to using onboarding@resend.dev for developer testing.
- * @param {string} email - Destination email address
- * @param {string} otpCode - 6-digit OTP code string
- * @returns {Promise<object>} Resend response payload
- */
 const sendOTPEmail = async (email, otpCode) => {
   try {
+    // TODO: Update to verified custom domain in production
     const fromEmail = process.env.MAIL_FROM || 'onboarding@resend.dev';
     const { data, error } = await resend.emails.send({
       from: `Tuma App <${fromEmail}>`,
@@ -51,15 +45,9 @@ const sendOTPEmail = async (email, otpCode) => {
   }
 };
 
-/**
- * Sends a security alert email informing the user that someone tried to register
- * an account using their already registered email address.
- * @param {string} email - Destination email address
- * @param {string} name - Registered user's name
- * @returns {Promise<object>} Resend response payload
- */
 const sendAccountExistsEmail = async (email, name) => {
   try {
+    // TODO: Update to verified custom domain in production
     const fromEmail = process.env.MAIL_FROM || 'onboarding@resend.dev';
     const { data, error } = await resend.emails.send({
       from: `Tuma App <${fromEmail}>`,

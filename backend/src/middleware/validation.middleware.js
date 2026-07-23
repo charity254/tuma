@@ -2,10 +2,6 @@ const { body, validationResult } = require('express-validator');
 const { HTTP_STATUS, ERROR_MESSAGES } = require('../constants');
 const AppError = require('../utils/AppError');
 
-/**
- * Common middleware to verify validation results.
- * If errors are present, passes the first error message to the global errorHandler.
- */
 const validateResults = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -15,9 +11,6 @@ const validateResults = (req, res, next) => {
   next();
 };
 
-/**
- * Validation rules for user registration.
- */
 const validateRegister = [
   body('name')
     .trim()
@@ -49,9 +42,6 @@ const validateRegister = [
   validateResults
 ];
 
-/**
- * Validation rules for OTP verification.
- */
 const validateVerifyOTP = [
   body('email')
     .trim()
@@ -66,9 +56,6 @@ const validateVerifyOTP = [
   validateResults
 ];
 
-/**
- * Validation rules for resending OTP.
- */
 const validateResendOTP = [
   body('email')
     .trim()
