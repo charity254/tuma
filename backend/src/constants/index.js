@@ -92,6 +92,18 @@ const ERROR_MESSAGES = {
   UNAUTHORIZED_ACTION: 'You are not authorized to perform this action',
   DATABASE_MIGRATION_FAILED: 'Database migration failed:',
   DATABASE_SEED_FAILED: 'Database seeding failed:',
+  ACCOUNT_ALREADY_VERIFIED: 'Account is already verified',
+  NAME_REQUIRED: 'Name is required',
+  NAME_TOO_LONG: 'Name cannot exceed 100 characters',
+  EMAIL_INVALID: 'Please enter a valid email address',
+  EMAIL_TOO_LONG: 'Email cannot exceed 255 characters',
+  PHONE_REQUIRED: 'Phone number is required',
+  PHONE_INVALID: 'Please enter a valid phone number (e.g. 0712345678 or +254712345678)',
+  PASSWORD_TOO_SHORT: 'Password must be at least 6 characters long',
+  PASSWORD_TOO_LONG: 'Password cannot exceed 128 characters',
+  ROLE_INVALID: 'Please select a valid role (user or runner)',
+  OTP_CODE_LENGTH: 'Verification code must be exactly 6 digits',
+  OTP_CODE_NUMERIC: 'Verification code must contain numbers only',
 };
 
 // Success messages
