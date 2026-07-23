@@ -115,6 +115,12 @@ const ERROR_MESSAGES = {
   ID_FRONT_REQUIRED: 'ID front image is required',
   ID_BACK_REQUIRED: 'ID back image is required',
   SELFIE_REQUIRED: 'Selfie image is required',
+  PRICING_RULE_NOT_FOUND: 'No pricing rule available for this distance and transport mode',
+  DESCRIPTION_REQUIRED: 'Description is required',
+  LATITUDE_INVALID: 'Latitude must be a valid decimal number',
+  LONGITUDE_INVALID: 'Longitude must be a valid decimal number',
+  PICKUP_ADDRESS_REQUIRED: 'Pickup address is required',
+  DROPOFF_ADDRESS_REQUIRED: 'Dropoff address is required',
 };
 
 // Success messages

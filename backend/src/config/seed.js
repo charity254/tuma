@@ -37,7 +37,7 @@ const seed = async () => {
     // Motorbike      | Ksh 200           | Ksh 280            | Ksh 400
     const pricingRules = [
       // Foot
-      { transport_mode: TRANSPORT_MODES.FOOT, distance_min_km: 0.00, distance_max_km: 2.00, base_price: 100.00 },
+      { transport_mode: TRANSPORT_MODES.FOOT, distance_min_km: 0.00, distance_max_km: 2.00, base_price: 130.00 },
       { transport_mode: TRANSPORT_MODES.FOOT, distance_min_km: 2.00, distance_max_km: 5.00, base_price: 150.00 },
       // Bicycle
       { transport_mode: TRANSPORT_MODES.BICYCLE, distance_min_km: 0.00, distance_max_km: 2.00, base_price: 150.00 },

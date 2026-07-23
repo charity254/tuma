@@ -97,6 +97,62 @@ const validateVerifyRunner = [
   validateResults
 ];
 
+const validateErrandPriceEstimation = [
+  body('pickupLat')
+    .isFloat()
+    .withMessage(ERROR_MESSAGES.LATITUDE_INVALID),
+  body('pickupLng')
+    .isFloat()
+    .withMessage(ERROR_MESSAGES.LONGITUDE_INVALID),
+  body('dropoffLat')
+    .isFloat()
+    .withMessage(ERROR_MESSAGES.LATITUDE_INVALID),
+  body('dropoffLng')
+    .isFloat()
+    .withMessage(ERROR_MESSAGES.LONGITUDE_INVALID),
+  body('transportMode')
+    .trim()
+    .notEmpty()
+    .withMessage(ERROR_MESSAGES.TRANSPORT_MODE_REQUIRED)
+    .isIn(['foot', 'bicycle', 'motorbike'])
+    .withMessage(ERROR_MESSAGES.TRANSPORT_MODE_INVALID),
+  validateResults
+];
+
+const validateErrandCreation = [
+  body('description')
+    .trim()
+    .notEmpty()
+    .withMessage(ERROR_MESSAGES.DESCRIPTION_REQUIRED),
+  body('pickupLat')
+    .isFloat()
+    .withMessage(ERROR_MESSAGES.LATITUDE_INVALID),
+  body('pickupLng')
+    .isFloat()
+    .withMessage(ERROR_MESSAGES.LONGITUDE_INVALID),
+  body('dropoffLat')
+    .isFloat()
+    .withMessage(ERROR_MESSAGES.LATITUDE_INVALID),
+  body('dropoffLng')
+    .isFloat()
+    .withMessage(ERROR_MESSAGES.LONGITUDE_INVALID),
+  body('pickupAddress')
+    .trim()
+    .notEmpty()
+    .withMessage(ERROR_MESSAGES.PICKUP_ADDRESS_REQUIRED),
+  body('dropoffAddress')
+    .trim()
+    .notEmpty()
+    .withMessage(ERROR_MESSAGES.DROPOFF_ADDRESS_REQUIRED),
+  body('transportMode')
+    .trim()
+    .notEmpty()
+    .withMessage(ERROR_MESSAGES.TRANSPORT_MODE_REQUIRED)
+    .isIn(['foot', 'bicycle', 'motorbike'])
+    .withMessage(ERROR_MESSAGES.TRANSPORT_MODE_INVALID),
+  validateResults
+];
+
 module.exports = {
   validateRegister,
   validateVerifyOTP,
@@ -104,4 +160,6 @@ module.exports = {
   validateLogin,
   validateRunnerProfileSetup,
   validateVerifyRunner,
+  validateErrandPriceEstimation,
+  validateErrandCreation,
 };
