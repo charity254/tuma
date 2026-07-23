@@ -75,9 +75,33 @@ const validateLogin = [
   validateResults
 ];
 
+const validateRunnerProfileSetup = [
+  body('nationalIdNumber')
+    .trim()
+    .notEmpty()
+    .withMessage(ERROR_MESSAGES.NATIONAL_ID_REQUIRED),
+  body('transportMode')
+    .trim()
+    .notEmpty()
+    .withMessage(ERROR_MESSAGES.TRANSPORT_MODE_REQUIRED)
+    .isIn(['walk', 'bicycle', 'motorbike'])
+    .withMessage(ERROR_MESSAGES.TRANSPORT_MODE_INVALID),
+  validateResults
+];
+
+const validateVerifyRunner = [
+  body('status')
+    .trim()
+    .isIn(['approved', 'rejected'])
+    .withMessage(ERROR_MESSAGES.VERIFICATION_STATUS_INVALID),
+  validateResults
+];
+
 module.exports = {
   validateRegister,
   validateVerifyOTP,
   validateResendOTP,
   validateLogin,
+  validateRunnerProfileSetup,
+  validateVerifyRunner,
 };
