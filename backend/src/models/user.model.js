@@ -5,6 +5,11 @@ const findByEmail = async (email) => {
   return result.rows[0] || null;
 };
 
+const findById = async (id) => {
+  const result = await query('SELECT * FROM users WHERE id = $1', [id]);
+  return result.rows[0] || null;
+};
+
 const createUser = async ({ name, email, phone, passwordHash, role, activeMode, authProvider, otpCode, otpExpiresAt }) => {
   const result = await query(
     `INSERT INTO users (name, email, phone, password_hash, role, active_mode, auth_provider, otp_code, otp_expires_at) 
@@ -47,6 +52,7 @@ const createRunnerProfile = async (userId) => {
 
 module.exports = {
   findByEmail,
+  findById,
   createUser,
   updateVerificationStatus,
   updateUserOTP,

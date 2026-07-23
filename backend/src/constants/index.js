@@ -104,6 +104,9 @@ const ERROR_MESSAGES = {
   ROLE_INVALID: 'Please select a valid role (user or runner)',
   OTP_CODE_LENGTH: 'Verification code must be exactly 6 digits',
   OTP_CODE_NUMERIC: 'Verification code must contain numbers only',
+  PASSWORD_REQUIRED: 'Password is required',
+  TOKEN_REQUIRED: 'Authentication token is required',
+  TOKEN_INVALID: 'Invalid or expired token',
 };
 
 // Success messages
