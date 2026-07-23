@@ -25,3 +25,6 @@ Thumbs.db
 .flaskenv*
 !.env.project
 !.env.vault
+
+# Local configuration directory
+.agents/
