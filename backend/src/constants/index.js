@@ -107,6 +107,14 @@ const ERROR_MESSAGES = {
   PASSWORD_REQUIRED: 'Password is required',
   TOKEN_REQUIRED: 'Authentication token is required',
   TOKEN_INVALID: 'Invalid or expired token',
+  NATIONAL_ID_REQUIRED: 'National ID number is required',
+  TRANSPORT_MODE_REQUIRED: 'Transport mode is required',
+  TRANSPORT_MODE_INVALID: 'Please select a valid transport mode (walk, bicycle, or motorbike)',
+  VERIFICATION_STATUS_INVALID: 'Please select a valid verification status (approved or rejected)',
+  RUNNER_PROFILE_NOT_FOUND: 'Runner profile not found',
+  ID_FRONT_REQUIRED: 'ID front image is required',
+  ID_BACK_REQUIRED: 'ID back image is required',
+  SELFIE_REQUIRED: 'Selfie image is required',
 };
 
 // Success messages
@@ -117,6 +125,8 @@ const SUCCESS_MESSAGES = {
   LOGIN_SUCCESS: 'Login successful',
   LOGOUT_SUCCESS: 'Logged out successfully',
   PROFILE_UPDATED: 'Profile updated successfully',
+  RUNNER_PROFILE_SUBMITTED: 'Runner verification profile submitted successfully',
+  RUNNER_VERIFICATION_UPDATED: 'Runner verification status updated successfully',
 };
 
 // OTP
