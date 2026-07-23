@@ -1,5 +1,5 @@
 const { body, validationResult } = require('express-validator');
-const { HTTP_STATUS } = require('../constants');
+const { HTTP_STATUS, ERROR_MESSAGES } = require('../constants');
 const AppError = require('../utils/AppError');
 
 /**
@@ -22,30 +22,30 @@ const validateRegister = [
   body('name')
     .trim()
     .notEmpty()
-    .withMessage('Name is required')
+    .withMessage(ERROR_MESSAGES.NAME_REQUIRED)
     .isLength({ max: 100 })
-    .withMessage('Name cannot exceed 100 characters'),
+    .withMessage(ERROR_MESSAGES.NAME_TOO_LONG),
   body('email')
     .trim()
     .isEmail()
-    .withMessage('Please enter a valid email address')
+    .withMessage(ERROR_MESSAGES.EMAIL_INVALID)
     .isLength({ max: 255 })
-    .withMessage('Email cannot exceed 255 characters'),
+    .withMessage(ERROR_MESSAGES.EMAIL_TOO_LONG),
   body('phone')
     .trim()
     .notEmpty()
-    .withMessage('Phone number is required')
+    .withMessage(ERROR_MESSAGES.PHONE_REQUIRED)
     .matches(/^\+?[0-9]\d{8,14}$/)
-    .withMessage('Please enter a valid phone number (e.g. 0712345678 or +254712345678)'),
+    .withMessage(ERROR_MESSAGES.PHONE_INVALID),
   body('password')
     .isLength({ min: 6 })
-    .withMessage('Password must be at least 6 characters long')
+    .withMessage(ERROR_MESSAGES.PASSWORD_TOO_SHORT)
     .isLength({ max: 128 })
-    .withMessage('Password cannot exceed 128 characters'),
+    .withMessage(ERROR_MESSAGES.PASSWORD_TOO_LONG),
   body('role')
     .trim()
     .isIn(['user', 'runner'])
-    .withMessage('Please select a valid role (user or runner)'),
+    .withMessage(ERROR_MESSAGES.ROLE_INVALID),
   validateResults
 ];
 
@@ -56,13 +56,13 @@ const validateVerifyOTP = [
   body('email')
     .trim()
     .isEmail()
-    .withMessage('Please enter a valid email address'),
+    .withMessage(ERROR_MESSAGES.EMAIL_INVALID),
   body('otpCode')
     .trim()
     .isLength({ min: 6, max: 6 })
-    .withMessage('Verification code must be exactly 6 digits')
+    .withMessage(ERROR_MESSAGES.OTP_CODE_LENGTH)
     .isNumeric()
-    .withMessage('Verification code must contain numbers only'),
+    .withMessage(ERROR_MESSAGES.OTP_CODE_NUMERIC),
   validateResults
 ];
 
@@ -73,7 +73,7 @@ const validateResendOTP = [
   body('email')
     .trim()
     .isEmail()
-    .withMessage('Please enter a valid email address'),
+    .withMessage(ERROR_MESSAGES.EMAIL_INVALID),
   validateResults
 ];
 

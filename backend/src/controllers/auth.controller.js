@@ -15,7 +15,8 @@ const {
 
 /**
  * Register a new user (customer or runner).
- * Generates an OTP, hashes the password, inserts the user, and sends the verification email.
+ * Prevents email enumeration by returning a success message even if the email exists.
+ * Prevents timing attacks by running a dummy hash calculation if the email exists.
  */
 const register = asyncHandler(async (req, res, next) => {
   const { name, email, phone, password, role } = req.body;
@@ -23,7 +24,18 @@ const register = asyncHandler(async (req, res, next) => {
   // 1. Check if user already exists
   const existingUser = await userModel.findByEmail(email);
   if (existingUser) {
-    return next(new AppError(ERROR_MESSAGES.EMAIL_ALREADY_EXISTS, HTTP_STATUS.CONFLICT));
+    // SECURITY: Prevent timing attacks by running a dummy bcrypt hash computation
+    const salt = await bcrypt.genSalt(12);
+    await bcrypt.hash(password, salt);
+
+    // SECURITY: Send an account-exists notification email to the owner
+    await emailService.sendAccountExistsEmail(email, existingUser.name);
+
+    // SECURITY: Return the exact same success response as a new registration
+    return res.status(HTTP_STATUS.CREATED).json({
+      success: true,
+      message: SUCCESS_MESSAGES.REGISTRATION_SUCCESS,
+    });
   }
 
   // 2. Hash password
