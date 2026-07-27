@@ -37,23 +37,24 @@ const seed = async () => {
     // Motorbike      | Ksh 200           | Ksh 280            | Ksh 400
     const pricingRules = [
       // Foot
-      { transport_mode: TRANSPORT_MODES.FOOT, distance_min_km: 0.00, distance_max_km: 2.00, base_price: 100.00 },
-      { transport_mode: TRANSPORT_MODES.FOOT, distance_min_km: 2.00, distance_max_km: 5.00, base_price: 150.00 },
+      { transport_mode: TRANSPORT_MODES.FOOT, distance_min_km: 0.00, distance_max_km: 2.00, base_price: 130.00 },
+      { transport_mode: TRANSPORT_MODES.FOOT, distance_min_km: 2.00, distance_max_km: 3.50, base_price: 150.00 },
       // Bicycle
       { transport_mode: TRANSPORT_MODES.BICYCLE, distance_min_km: 0.00, distance_max_km: 2.00, base_price: 150.00 },
       { transport_mode: TRANSPORT_MODES.BICYCLE, distance_min_km: 2.00, distance_max_km: 5.00, base_price: 200.00 },
-      { transport_mode: TRANSPORT_MODES.BICYCLE, distance_min_km: 5.00, distance_max_km: 10.00, base_price: 280.00 },
+      { transport_mode: TRANSPORT_MODES.BICYCLE, distance_min_km: 5.00, distance_max_km: 7.00, base_price: 260.00 },
       // Motorbike
       { transport_mode: TRANSPORT_MODES.MOTORBIKE, distance_min_km: 0.00, distance_max_km: 2.00, base_price: 200.00 },
       { transport_mode: TRANSPORT_MODES.MOTORBIKE, distance_min_km: 2.00, distance_max_km: 5.00, base_price: 280.00 },
-      { transport_mode: TRANSPORT_MODES.MOTORBIKE, distance_min_km: 5.00, distance_max_km: 10.00, base_price: 400.00 },
+      { transport_mode: TRANSPORT_MODES.MOTORBIKE, distance_min_km: 5.00, distance_max_km: 12.00, base_price: 450.00 },
     ];
+
+    await client.query('TRUNCATE TABLE pricing_rules RESTART IDENTITY CASCADE');
 
     for (const rule of pricingRules) {
       await client.query(
         `INSERT INTO pricing_rules (transport_mode, distance_min_km, distance_max_km, base_price) 
-         VALUES ($1, $2, $3, $4) 
-         ON CONFLICT ON CONSTRAINT unique_mode_distance DO UPDATE SET base_price = EXCLUDED.base_price`,
+         VALUES ($1, $2, $3, $4)`,
         [rule.transport_mode, rule.distance_min_km, rule.distance_max_km, rule.base_price]
       );
     }
